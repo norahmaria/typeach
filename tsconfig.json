@@ -18,9 +18,8 @@
     "types": ["cypress"],
     "baseUrl": "./packages",
     "paths": {
-      "@typeach/core/*": ["core/src/*"],
-      "@typeach/utils/*": ["utils/src/*"],
-      "@typeach/web/*": ["web/src/*"]
+      "@typeach/button": ["button/src/*"],
+      "@typeach/select": ["select/src/*"]
     }
   },
   "include": ["packages/*/src"],
