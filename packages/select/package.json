@@ -1,15 +1,19 @@
 {
-  "name": "select",
+  "name": "@typeach/select",
+  "private": false,
   "version": "0.0.0",
   "author": "Norah Maria",
   "license": "MIT",
   "description": "Select description",
   "main": "dist/select.es.js",
   "module": "dist/select.es.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build",
     "lint": "eslint ./src",
     "tsc": "tsc"
   },
-  "types": "./src/select.d.ts"
+  "types": "dist/select.es.d.ts"
 }

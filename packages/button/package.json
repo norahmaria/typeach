@@ -1,15 +1,19 @@
 {
-  "name": "button",
+  "name": "@typeach/button",
+  "private": false,
   "version": "0.0.0",
   "author": "Norah Maria",
   "license": "MIT",
   "description": "Button description",
   "main": "dist/button.es.js",
   "module": "dist/button.es.js",
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "build": "vite build",
     "lint": "eslint ./src",
     "tsc": "tsc"
   },
-  "types": "./src/button.d.ts"
+  "types": "dist/button.es.d.ts"
 }
