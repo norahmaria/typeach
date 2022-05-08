@@ -1,0 +1,7 @@
+{
+  "component": {
+    "componentFolder": "packages",
+    "testFiles": "**/*.cypress.ts",
+    "verbose": true
+  }
+}

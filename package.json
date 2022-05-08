@@ -1,0 +1,63 @@
+{
+  "name": "@typeach/components",
+  "private": true,
+  "version": "0.0.0",
+  "license": "MIT",
+  "author": "Norah Maria",
+  "description": "typeach components",
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "scripts": {
+    "dev": "yarn story",
+    "build": "lerna run build",
+    "test": "yarn vitest",
+    "test:update": "yarn vitest --update",
+    "cy:open": "yarn cypress open",
+    "cy:ct": "yarn cypress open-ct",
+    "story": "start-storybook -p 6006",
+    "story:build": "build-storybook -o docs",
+    "lint": "lerna run lint",
+    "postinstall": "yarn build",
+    "prepublishOnly": "yarn build",
+    "update": "yarn upgrade --latest",
+    "prettier": "prettier --config .prettierrc 'packages/**/*.stories.ts' --write"
+  },
+  "engines": {
+    "node": "16.14.0"
+  },
+  "dependencies": {
+    "vue": "^3.2.25"
+  },
+  "devDependencies": {
+    "@cypress/vite-dev-server": "^2.2.2",
+    "@cypress/vue": "^3.1.0",
+    "@storybook/addon-essentials": "^6.4.22",
+    "@storybook/builder-webpack5": "^6.4.22",
+    "@storybook/manager-webpack5": "^6.4.22",
+    "@storybook/vue3": "^6.4.22",
+    "@typescript-eslint/eslint-plugin": "^5.22.0",
+    "@typescript-eslint/parser": "^5.22.0",
+    "@vitejs/plugin-vue": "^2.3.1",
+    "@vue/eslint-config-airbnb": "^6.0.0",
+    "@vue/eslint-config-typescript": "^10.0.0",
+    "@vue/test-utils": "^2.0.0-rc.21",
+    "css-loader": "^6.7.1",
+    "cypress": "^9.6.0",
+    "eslint": "^8.15.0",
+    "eslint-plugin-vue": "^8.7.1",
+    "eslint-plugin-vuejs-accessibility": "^1.1.1",
+    "husky": "^7.0.4",
+    "jsdom": "^19.0.0",
+    "lerna": "^4.0.0",
+    "sass": "^1.51.0",
+    "sass-loader": "^12.6.0",
+    "style-loader": "^3.3.1",
+    "typescript": "^4.5.4",
+    "vite": "^2.9.7",
+    "vite-dts": "^1.0.4",
+    "vitest": "^0.10.5"
+  }
+}

@@ -1,0 +1,12 @@
+Features:
+  ✔ TypeScript @done(22-05-07 10:50)
+  ✔ Storybook @done(22-05-06 20:32) 
+  ✔ SASS Support @done(22-05-07 09:01)
+  ✔ Cypress @done(22-05-07 10:33)
+  ✔ Testing - Vue Utils @wip @done(22-05-06 23:26)
+  ☐ SVG Imports 
+  ✔ Eslint @done(22-05-07 08:56)
+  ✔ Git (Pre) Commit Hook @done(22-05-07 10:59)
+
+Research:
+  ☐ Publishing the monorepo library compared to all-in-one package

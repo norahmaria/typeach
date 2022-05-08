@@ -1,0 +1,34 @@
+{
+  "references": [{ "path": "./tsconfig.node.json" }],
+  "compilerOptions": {
+    "target": "esnext",
+    "useDefineForClassFields": true,
+    "module": "esnext",
+    "moduleResolution": "node",
+    "strict": true,
+    "jsx": "preserve",
+    "sourceMap": false,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["esnext", "dom"],
+    "skipLibCheck": true,
+    "declaration": true,
+    "declarationMap": true,
+    "types": ["cypress"],
+    "baseUrl": "./packages",
+    "paths": {
+      "@typeach/core/*": ["core/src/*"],
+      "@typeach/utils/*": ["utils/src/*"],
+      "@typeach/web/*": ["web/src/*"]
+    }
+  },
+  "include": ["packages/*/src"],
+  "exclude": [
+    "**/*.cypress.ts",
+    "**/*.spec.ts",
+    "**/*.stories.ts",
+    "dist",
+    "**/dist"
+  ]
+}
