@@ -13,11 +13,13 @@ node_modules
 .prettierignore
 .prettierrc
 .todo
-cypres.json
+cypress.json
 lerna.json
 package.json
+LICENSE
 README.md
 tsconfig.json
 tsconfig.node.json
 vite.config.ts
 vite.ts
+yarn.lock
