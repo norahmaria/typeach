@@ -1,4 +1,4 @@
-<h1 align="center">Vue 3 Mono Library</h1>
+<h1 align="center">ty 🍑</h1>
 <h3 align="center">Features</h3>
 
 <table border="0" align="center">
