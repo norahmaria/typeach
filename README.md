@@ -1,4 +1,5 @@
 <h1 align="center">typeach 🍑 (wip)</h1>
+<b align="center">A lil Vue 3 Component library</b>
 <table border="0" align="center">
   <tr><td>Cypress</td></tr>
   <tr><td>TypeScript</td></tr>
@@ -8,7 +9,6 @@
   <tr><td>Husky</td></tr>
   <tr><td>Tests (@vue/test-utils)</td></tr>
 </table>
-<br/>
 
 #### 🚀 Start by installing the dependencies with `yarn`
 
