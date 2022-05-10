@@ -2,6 +2,7 @@ import { UserConfigExport, Plugin } from 'vite'
 import path from 'path'
 
 import vue from '@vitejs/plugin-vue'
+import dts from 'vite-plugin-dts'
 import libcss from './plugins/libcss'
 
 export function defineVite(
@@ -9,7 +10,7 @@ export function defineVite(
   override?: UserConfigExport
 ): UserConfigExport {
   return {
-    plugins: [vue(), libcss() as Plugin],
+    plugins: [vue(), dts(), libcss() as Plugin],
     build: {
       lib: {
         entry: path.resolve(dirname, 'src/index.ts'),

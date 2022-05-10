@@ -14,7 +14,6 @@
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "declaration": true,
-    "declarationMap": true,
     "types": ["cypress"],
     "baseUrl": "./packages",
     "paths": {
