@@ -1,6 +1,4 @@
-<h1 align="center">ty 🍑 (wip)</h1>
-<h3 align="center">Features</h3>
-
+<h1 align="center">typeach 🍑 (wip)</h1>
 <table border="0" align="center">
   <tr><td>Cypress</td></tr>
   <tr><td>TypeScript</td></tr>
