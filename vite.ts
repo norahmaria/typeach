@@ -1,15 +1,15 @@
-import { UserConfigExport } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import dts from 'vite-dts'
-
+import { UserConfigExport, Plugin } from 'vite'
 import path from 'path'
+
+import vue from '@vitejs/plugin-vue'
+import libcss from './plugins/libcss'
 
 export function defineVite(
   dirname: string,
   override?: UserConfigExport
 ): UserConfigExport {
   return {
-    plugins: [vue(), dts()],
+    plugins: [vue(), libcss() as Plugin],
     build: {
       lib: {
         entry: path.resolve(dirname, 'src/index.ts'),
