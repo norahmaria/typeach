@@ -17,7 +17,11 @@ export function defineVite(
         formats: ['es'],
       },
       rollupOptions: {
-        external: (id: string) => !id.startsWith('.') && !path.isAbsolute(id),
+        // external: (id: string) => !id.startsWith('.') && !path.isAbsolute(id),
+        external: (id: string) => {
+          if (id === 'plugin-vue:export-helper') return false
+          return !id.startsWith('.') && !path.isAbsolute(id)
+        },
         output: {
           globals: {
             vue: 'Vue',
