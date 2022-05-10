@@ -1,6 +1,6 @@
 <h1 align="center">typeach 🍑 (wip)</h1>
 <div align="center"><b>A lil Vue 3 Component library</b></div>
-
+<br>
 <table border="0" align="center">
   <tr><td>Cypress</td></tr>
   <tr><td>TypeScript</td></tr>
