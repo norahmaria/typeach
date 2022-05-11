@@ -12,8 +12,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && yarn build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
     "lint": "eslint ./src",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "prepublishOnly": "yarn build"
   }
 }

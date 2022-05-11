@@ -5,9 +5,7 @@
   </button>
 </template>
 
-<script lang="ts" setup>
-  defineProps({})
-</script>
+<script lang="ts" setup></script>
 
 <style scoped>
   .button {

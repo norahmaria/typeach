@@ -3686,7 +3686,41 @@
   resolved "https://registry.npmjs.org/@vitejs/plugin-vue/-/plugin-vue-2.3.2.tgz"
   integrity sha512-umyypfSHS4kQLdYAnJHhaASq7FRzNCdvcRoQ3uYGNk1/M4a+hXUd7ysN7BLhCrWH6uBokyCkFeUAaFDzSaaSrQ==
 
-"@vue/compiler-core@3.2.33":
+"@volar/code-gen@0.34.12":
+  version "0.34.12"
+  resolved "https://registry.yarnpkg.com/@volar/code-gen/-/code-gen-0.34.12.tgz#ce367440b32fd6855076ea1d10e73537c2977207"
+  integrity sha512-5GAPsSjScnfMmMoh9qLW7CWQjjnT0fTUsPWnDMMjKIOqQF9J5mOyo7rprt1VzX63zwayqFfx7V8W3EVNhUCE3w==
+  dependencies:
+    "@volar/source-map" "0.34.12"
+
+"@volar/source-map@0.34.12":
+  version "0.34.12"
+  resolved "https://registry.yarnpkg.com/@volar/source-map/-/source-map-0.34.12.tgz#2d6372096e3886d636bc6f52545edea5af45ca41"
+  integrity sha512-07imKws1cz9g3eo0VWXdioNfc1eCjqwK7GsxVuYSc7OCzKASt9PywUW+F39QGB9g2Kewof+PjCVIPeGqGRECTA==
+
+"@volar/vue-code-gen@0.34.12":
+  version "0.34.12"
+  resolved "https://registry.yarnpkg.com/@volar/vue-code-gen/-/vue-code-gen-0.34.12.tgz#e742a3bfe059f96725d3832a0e8a5700ff827d2e"
+  integrity sha512-PFcft62eIvQvcB6H2Z88fouTu2JmYwimORziFGr3LlGriQUEVmyDtqddtb+E+j2wGChtLkh6hf1py94C5VpI/Q==
+  dependencies:
+    "@volar/code-gen" "0.34.12"
+    "@volar/source-map" "0.34.12"
+    "@vue/compiler-core" "^3.2.31"
+    "@vue/compiler-dom" "^3.2.31"
+    "@vue/shared" "^3.2.31"
+
+"@volar/vue-typescript@0.34.12":
+  version "0.34.12"
+  resolved "https://registry.yarnpkg.com/@volar/vue-typescript/-/vue-typescript-0.34.12.tgz#3b6baeb59ec4b684fb54ecd00dc206ae94e3fac5"
+  integrity sha512-mY5cZ2OFOKt1HcCuoX1ViEsccltX3mdACk/FAjrSZTrilTdVHI1zkmQlrpCSnjmE1qowd8I6YoVt7THCaVrHdg==
+  dependencies:
+    "@volar/code-gen" "0.34.12"
+    "@volar/source-map" "0.34.12"
+    "@volar/vue-code-gen" "0.34.12"
+    "@vue/compiler-sfc" "^3.2.31"
+    "@vue/reactivity" "^3.2.31"
+
+"@vue/compiler-core@3.2.33", "@vue/compiler-core@^3.2.31":
   version "3.2.33"
   resolved "https://registry.npmjs.org/@vue/compiler-core/-/compiler-core-3.2.33.tgz"
   integrity sha512-AAmr52ji3Zhk7IKIuigX2osWWsb2nQE5xsdFYjdnmtQ4gymmqXbjLvkSE174+fF3A3kstYrTgGkqgOEbsdLDpw==
@@ -3696,7 +3730,7 @@
     estree-walker "^2.0.2"
     source-map "^0.6.1"
 
-"@vue/compiler-dom@3.2.33", "@vue/compiler-dom@^3.2.0":
+"@vue/compiler-dom@3.2.33", "@vue/compiler-dom@^3.2.0", "@vue/compiler-dom@^3.2.31":
   version "3.2.33"
   resolved "https://registry.npmjs.org/@vue/compiler-dom/-/compiler-dom-3.2.33.tgz"
   integrity sha512-GhiG1C8X98Xz9QUX/RlA6/kgPBWJkjq0Rq6//5XTAGSYrTMBgcLpP9+CnlUg1TFxnnCVughAG+KZl28XJqw8uQ==
@@ -3704,7 +3738,7 @@
     "@vue/compiler-core" "3.2.33"
     "@vue/shared" "3.2.33"
 
-"@vue/compiler-sfc@3.2.33", "@vue/compiler-sfc@^3.2.0":
+"@vue/compiler-sfc@3.2.33", "@vue/compiler-sfc@^3.2.0", "@vue/compiler-sfc@^3.2.31":
   version "3.2.33"
   resolved "https://registry.npmjs.org/@vue/compiler-sfc/-/compiler-sfc-3.2.33.tgz"
   integrity sha512-H8D0WqagCr295pQjUYyO8P3IejM3vEzeCO1apzByAEaAR/WimhMYczHfZVvlCE/9yBaEu/eu9RdiWr0kF8b71Q==
@@ -3758,7 +3792,7 @@
     estree-walker "^2.0.2"
     magic-string "^0.25.7"
 
-"@vue/reactivity@3.2.33":
+"@vue/reactivity@3.2.33", "@vue/reactivity@^3.2.31":
   version "3.2.33"
   resolved "https://registry.npmjs.org/@vue/reactivity/-/reactivity-3.2.33.tgz"
   integrity sha512-62Sq0mp9/0bLmDuxuLD5CIaMG2susFAGARLuZ/5jkU1FCf9EDbwUuF+BO8Ub3Rbodx0ziIecM/NsmyjardBxfQ==
@@ -3790,7 +3824,7 @@
     "@vue/compiler-ssr" "3.2.33"
     "@vue/shared" "3.2.33"
 
-"@vue/shared@3.2.33":
+"@vue/shared@3.2.33", "@vue/shared@^3.2.31":
   version "3.2.33"
   resolved "https://registry.npmjs.org/@vue/shared/-/shared-3.2.33.tgz"
   integrity sha512-UBc1Pg1T3yZ97vsA2ueER0F6GbJebLHYlEi4ou1H5YL4KWvMOOWwpYo9/QpWq93wxKG6Wo13IY74Hcn/f7c7Bg==
@@ -14235,6 +14269,13 @@ vue-loader@^16.0.0:
     chalk "^4.1.0"
     hash-sum "^2.0.0"
     loader-utils "^2.0.0"
+
+vue-tsc@^0.34.12:
+  version "0.34.12"
+  resolved "https://registry.yarnpkg.com/vue-tsc/-/vue-tsc-0.34.12.tgz#19e6593371a1351a0a106fb10ed50e441f5c2299"
+  integrity sha512-CmuqLXHEW5UvS8UpT2RYom5MzOWBD142PLXxDX0ARdZ/u1oLobA3od4XY2XZACQYCFCzjTvfD1H5wrWwiGwoUA==
+  dependencies:
+    "@volar/vue-typescript" "0.34.12"
 
 vue@^3.2.25:
   version "3.2.33"

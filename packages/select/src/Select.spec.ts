@@ -1,7 +1,7 @@
 import { mount } from '@vue/test-utils'
 import { test, expect } from 'vitest'
 
-import SelectVue from './Nm-Select.vue'
+import SelectVue from './Select.vue'
 
 test('displays message', () => {
   const wrapper = mount(SelectVue, {

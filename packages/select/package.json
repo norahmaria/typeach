@@ -1,7 +1,7 @@
 {
   "name": "@typeach/select",
   "private": false,
-  "version": "0.0.10",
+  "version": "0.0.12",
   "author": "Norah Maria",
   "license": "MIT",
   "description": "Select description",
@@ -12,8 +12,10 @@
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && yarn build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
     "lint": "eslint ./src",
-    "tsc": "tsc"
+    "tsc": "tsc",
+    "prepublishOnly": "yarn build"
   }
 }

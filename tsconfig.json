@@ -20,13 +20,5 @@
       "@typeach/button": ["button/src/*"],
       "@typeach/select": ["select/src/*"]
     }
-  },
-  "include": ["packages/*/src"],
-  "exclude": [
-    "**/*.cypress.ts",
-    "**/*.spec.ts",
-    "**/*.stories.ts",
-    "dist",
-    "**/dist"
-  ]
+  }
 }

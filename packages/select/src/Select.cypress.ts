@@ -1,5 +1,5 @@
 import { mount } from '@cypress/vue'
-import NmSelect from './Nm-Select.vue'
+import NmSelect from './Select.vue'
 
 describe('My First Test', () => {
   it('Does not do much!', () => {
