@@ -4,7 +4,6 @@
     <slot />
     {{ snowflake }}
   </button>
-  #dedede
 </template>
 
 <script setup lang="ts">
@@ -19,8 +18,6 @@
       required: true,
     },
   })
-
-  defineExpose()
 </script>
 
 <style lang="scss" scoped>

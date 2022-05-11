@@ -1,19 +1,21 @@
 {
   "name": "@typeach/button",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.10",
   "author": "Norah Maria",
   "license": "MIT",
   "description": "Button description",
-  "main": "dist/button.es.js",
-  "module": "dist/button.es.js",
+  "main": "./dist/button.es.js",
+  "module": "./dist/button.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && yarn build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
     "lint": "eslint ./src",
-    "tsc": "tsc"
-  },
-  "types": "dist/button.es.d.ts"
+    "tsc": "tsc",
+    "prepublishOnly": "yarn build"
+  }
 }

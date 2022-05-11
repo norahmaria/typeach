@@ -1,0 +1,9 @@
+{
+  "extends": "../../tsconfig.json",
+  "exclude": ["**/*.cypress.ts", "**/*.spec.ts", "**/*.stories.ts", "**/dist"],
+  "include": ["src"],
+  "compilerOptions": {
+    "outDir": "dist",
+    "types": ["vite/client"]
+  }
+}

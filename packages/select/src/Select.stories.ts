@@ -1,6 +1,6 @@
 import { Meta, Story } from '@storybook/vue3'
 
-import SelectVue from './Nm-Select.vue'
+import SelectVue from './Select.vue'
 
 export default {
   title: 'Inputs/Select',

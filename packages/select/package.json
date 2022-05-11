@@ -1,19 +1,21 @@
 {
   "name": "@typeach/select",
   "private": false,
-  "version": "0.0.0",
+  "version": "0.0.12",
   "author": "Norah Maria",
   "license": "MIT",
   "description": "Select description",
-  "main": "dist/select.es.js",
-  "module": "dist/select.es.js",
+  "main": "./dist/select.es.js",
+  "module": "./dist/select.es.js",
+  "types": "./dist/index.d.ts",
   "files": [
     "dist"
   ],
   "scripts": {
-    "build": "vite build",
+    "build": "vite build && yarn build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly",
     "lint": "eslint ./src",
-    "tsc": "tsc"
-  },
-  "types": "dist/select.es.d.ts"
+    "tsc": "tsc",
+    "prepublishOnly": "yarn build"
+  }
 }

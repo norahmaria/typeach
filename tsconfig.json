@@ -14,20 +14,11 @@
     "lib": ["esnext", "dom"],
     "skipLibCheck": true,
     "declaration": true,
-    "declarationMap": true,
     "types": ["cypress"],
     "baseUrl": "./packages",
     "paths": {
       "@typeach/button": ["button/src/*"],
       "@typeach/select": ["select/src/*"]
     }
-  },
-  "include": ["packages/*/src"],
-  "exclude": [
-    "**/*.cypress.ts",
-    "**/*.spec.ts",
-    "**/*.stories.ts",
-    "dist",
-    "**/dist"
-  ]
+  }
 }

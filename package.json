@@ -13,6 +13,7 @@
   "scripts": {
     "dev": "yarn story",
     "build": "lerna run build",
+    "build:types": "lerna run build:types",
     "test": "yarn vitest",
     "test:update": "yarn vitest --update",
     "cy:open": "yarn cypress open",
@@ -21,7 +22,6 @@
     "story:build": "build-storybook -o docs",
     "lint": "lerna run lint",
     "postinstall": "yarn build",
-    "prepublishOnly": "yarn build",
     "update": "yarn upgrade --latest",
     "prettier": "prettier --config .prettierrc 'packages/**/*.stories.ts' --write"
   },
@@ -58,6 +58,7 @@
     "typescript": "^4.5.4",
     "vite": "^2.9.7",
     "vite-dts": "^1.0.4",
-    "vitest": "^0.10.5"
+    "vitest": "^0.10.5",
+    "vue-tsc": "^0.34.12"
   }
 }
