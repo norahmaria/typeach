@@ -17,8 +17,8 @@
     "types": ["cypress"],
     "baseUrl": "./packages",
     "paths": {
-      "@typeach/button": ["button/src/*"],
-      "@typeach/select": ["select/src/*"]
+      "@typeach/button": ["/button/src/index.ts"],
+      "@typeach/select": ["/select/src/index.ts"]
     }
   }
 }
