@@ -6,16 +6,19 @@ module.exports = {
     'vue/setup-compiler-macros': true,
   },
 
-  plugins: ['@typescript-eslint'],
+  plugins: ['@typescript-eslint', 'prettier'],
 
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-strongly-recommended',
     '@vue/airbnb',
     '@vue/typescript',
+    'prettier',
   ],
 
   rules: {
+    'prettier/prettier': ['error'],
+
     semi: ['error', 'never'],
     curly: ['error', 'multi-line'],
     'operator-linebreak': ['error', 'after'],
