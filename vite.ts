@@ -2,7 +2,11 @@ import { UserConfigExport, Plugin } from 'vite'
 import path from 'path'
 
 import vue from '@vitejs/plugin-vue'
+
+/* eslint-disable */
+// @ts-ignore
 import libcss from './plugins/libcss'
+/* eslint-enable */
 
 export function defineVite(
   dirname: string,
@@ -14,6 +18,7 @@ export function defineVite(
       lib: {
         entry: path.resolve(dirname, 'src/index.ts'),
         formats: ['es'],
+        fileName: 'index',
       },
       rollupOptions: {
         external: (id: string) => {
