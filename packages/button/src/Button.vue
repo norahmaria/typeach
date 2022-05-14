@@ -7,7 +7,7 @@
 
 <script lang="ts" setup></script>
 
-<style scoped>
+<style lang="scss" scoped>
   .button {
     background-color: red;
     font-size: 30px;
