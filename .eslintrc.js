@@ -11,6 +11,7 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-strongly-recommended',
+    'plugin:monorepo/recommended',
     '@vue/airbnb',
     '@vue/typescript',
     'prettier',

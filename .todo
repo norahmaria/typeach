@@ -6,7 +6,5 @@ Features:
   ✔ Testing - Vue Utils @wip @done(22-05-06 23:26)
   ☐ SVG Imports 
   ✔ Eslint @done(22-05-07 08:56)
+    ☐ @high Running command errors out
   ✔ Git (Pre) Commit Hook @done(22-05-07 10:59)
-
-Research:
-  ☐ Publishing the monorepo library compared to all-in-one package
