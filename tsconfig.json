@@ -1,5 +1,6 @@
 {
   "references": [{ "path": "./tsconfig.node.json" }],
+  "exclude": ["dist"],
   "compilerOptions": {
     "target": "esnext",
     "useDefineForClassFields": true,
