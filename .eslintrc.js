@@ -110,7 +110,13 @@ module.exports = {
     ],
   },
 
-  parser: '@typescript-eslint/parser',
+  parserOptions: {
+    parser: require.resolve('@typescript-eslint/parser'),
+    extraFileExtensions: ['.vue'],
+    ecmaFeatures: {
+      jsx: true,
+    },
+  },
 
   overrides: [
     {
