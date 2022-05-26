@@ -1,11 +1,17 @@
 <template>
   <button class="button">
     <slot />
-    helloworld
   </button>
 </template>
 
-<script lang="ts" setup></script>
+<script lang="ts" setup>
+  defineProps({
+    color: {
+      type: String,
+      default: 'primary',
+    },
+  })
+</script>
 
 <style lang="scss" scoped>
   .button {

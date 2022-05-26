@@ -15,6 +15,7 @@ module.exports = {
     '@vue/airbnb',
     '@vue/typescript',
     'prettier',
+    'plugin:storybook/recommended',
   ],
 
   rules: {
@@ -22,9 +23,18 @@ module.exports = {
 
     semi: ['error', 'never'],
     curly: ['error', 'multi-line'],
+
     'operator-linebreak': ['error', 'after'],
     'arrow-parens': 'off',
-    'prefer-destructuring': ['error', { object: true, array: false }],
+
+    'prefer-destructuring': [
+      'error',
+      {
+        object: true,
+        array: false,
+      },
+    ],
+
     'linebreak-style': 'off',
     'comma-dangle': 'off',
 
@@ -40,8 +50,12 @@ module.exports = {
     'no-continue': 'off',
     'no-else-return': 'off',
     'no-underscore-dangle': 'off',
-
-    'no-console': ['warn', { allow: ['error', 'assert'] }],
+    'no-console': [
+      'warn',
+      {
+        allow: ['error', 'assert'],
+      },
+    ],
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'warn',
 
     '@typescript-eslint/ban-types': 'warn',
@@ -50,14 +64,19 @@ module.exports = {
 
     '@typescript-eslint/no-unused-vars': [
       'warn',
-      { vars: 'all', args: 'after-used' },
+      {
+        vars: 'all',
+        args: 'after-used',
+      },
     ],
 
     '@typescript-eslint/type-annotation-spacing': [
       'error',
-      { before: false, after: true },
+      {
+        before: false,
+        after: true,
+      },
     ],
-
     // Vue accessibility rules
     'vuejs-accessibility/click-events-have-key-events': 'warn',
     'vuejs-accessibility/mouse-events-have-key-events': 'warn',
@@ -70,6 +89,7 @@ module.exports = {
     'vue/no-mutating-props': 'warn',
     'vue/no-setup-props-destructure': 'warn',
     'vue/multi-word-component-names': 'warn',
+
     'vue/script-indent': [
       'error',
       2,
@@ -82,7 +102,11 @@ module.exports = {
 
     'vue/v-slot-style': [
       'error',
-      { atComponent: 'v-slot', default: 'v-slot', named: 'longform' },
+      {
+        atComponent: 'v-slot',
+        default: 'v-slot',
+        named: 'longform',
+      },
     ],
   },
 

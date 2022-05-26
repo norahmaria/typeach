@@ -4,6 +4,12 @@ import ButtonVue from './Button.vue'
 
 export default {
   title: 'Inputs/Button',
+  argTypes: {
+    variant: {
+      options: ['primary', 'secondary'],
+      control: { type: 'radio' },
+    },
+  },
 } as Meta
 
 const Template: Story = args => ({
