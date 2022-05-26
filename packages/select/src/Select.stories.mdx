@@ -1,0 +1,23 @@
+import { Meta, Story } from '@storybook/addon-docs'
+
+import Select from './Select.vue'
+
+<Meta title="Select" component={Select} />
+
+export const Template = args => ({
+  components: { Select },
+  setup() {
+    return { args }
+  },
+  template: '<Select v-bind="args" />',
+})
+
+<Story
+  name="Select"
+  args={{
+    title: 'Title',
+    snowflake: 'Id',
+  }}
+>
+  {Template.bind({})}
+</Story>
