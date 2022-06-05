@@ -11,7 +11,6 @@ module.exports = {
   extends: [
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-strongly-recommended',
-    'plugin:monorepo/recommended',
     '@vue/airbnb',
     '@vue/typescript',
     'prettier',
@@ -70,13 +69,6 @@ module.exports = {
       },
     ],
 
-    '@typescript-eslint/type-annotation-spacing': [
-      'error',
-      {
-        before: false,
-        after: true,
-      },
-    ],
     // Vue accessibility rules
     'vuejs-accessibility/click-events-have-key-events': 'warn',
     'vuejs-accessibility/mouse-events-have-key-events': 'warn',
@@ -126,4 +118,12 @@ module.exports = {
       },
     },
   ],
+
+  settings: {
+    'import/resolver': {
+      node: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
+      },
+    },
+  },
 }

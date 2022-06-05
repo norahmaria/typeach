@@ -7,9 +7,11 @@ addons.setConfig({
   showPanel: false,
   selectedPanel: 'Button',
   initialActive: 'sidebar',
+
   sidebar: {
     showRoots: true,
   },
+
   toolbar: {
     eject: { hidden: true },
     copy: { hidden: true },

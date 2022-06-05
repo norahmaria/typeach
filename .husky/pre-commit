@@ -2,4 +2,5 @@
 . "$(dirname "$0")/_/husky.sh"
 
 yarn vitest run
+yarn cy:ct:run
 yarn lint

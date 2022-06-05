@@ -13,7 +13,7 @@ export default create({
   barSelectedColor: '#7155FF',
   barBg: 'white',
 
-  brandTitle: '@components',
+  brandTitle: '@typeach',
   // brandUrl: 'https://example.com',
   // brandImage: 'https://place-hold.it/350x150',
 })

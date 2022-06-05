@@ -2,10 +2,10 @@
 <div align="center"><b>A lil Vue 3 Component library</b></div>
 <br>
 <table border="0" align="center">
-  <tr><td>Cypress</td></tr>
+  <tr><td>Cypress (Component Testing)</td></tr>
   <tr><td>TypeScript</td></tr>
-  <tr><td>Lerna</td></tr>
-  <tr><td>Eslint</td></tr>
+  <tr><td>Eslint (with Prettier)</td></tr>
+  <tr><td>Storybook</td></tr>
   <tr><td>SASS</td></tr>
   <tr><td>Husky</td></tr>
   <tr><td>Tests (@vue/test-utils)</td></tr>
@@ -16,7 +16,7 @@
 #### Storybook
 
 ```ts
-// run storybook for dev
+// run storybook
 yarn story
 
 // build storybook
@@ -30,15 +30,12 @@ yarn story:build
 yarn test
 
 // update snapshots
-yarn test:update
+yarn test:up
 ```
 
 #### Cypress
 
 ```ts
-// open cypress
-yarn cy:open
-
 // open component testing
 yarn cy:ct
 ```
