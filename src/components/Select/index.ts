@@ -1,1 +1,1 @@
-export { default as Select } from './TypeachSelect.vue'
+export { default as TypeachSelect } from './TypeachSelect.vue'

@@ -30,6 +30,7 @@ const libcss = (): Plugin => ({
 
     forEachCSSFile(viteConfig, viteBundle, paths => {
       const componentName = paths.component.split('/').pop()
+      const name = `Typeach${componentName}`
 
       const data = readFileSync(`${paths.component}/index.es.js`, {
         encoding: 'utf8',
@@ -37,7 +38,7 @@ const libcss = (): Plugin => ({
 
       writeFileSync(
         `${paths.component}/index.es.js`,
-        `import './${componentName}.css';\n${data}`
+        `import './${name}.css';\n${data}`
       )
     })
   },
@@ -51,6 +52,7 @@ const libcss = (): Plugin => ({
 
     forEachCSSFile(viteConfig, viteBundle, paths => {
       const [oldPath, newPath] = paths.css
+
       renameSync(oldPath, newPath)
     })
   },

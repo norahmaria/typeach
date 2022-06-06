@@ -1,8 +1,7 @@
 {
   "name": "@typeach/components",
-  "private": true,
-  "version": "0.0.0",
-  "license": "MIT",
+  "version": "0.0.6",
+  "license": "GNU",
   "author": "Norah Maria",
   "description": "typeach components",
   "sideEffects": false,
@@ -12,6 +11,14 @@
   "files": [
     "dist"
   ],
+  "keywords": [
+    "component",
+    "library",
+    "vue"
+  ],
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {
     "dev": "yarn story",
     "build": "vite build && yarn build:types",
