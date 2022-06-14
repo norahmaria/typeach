@@ -1,0 +1,26 @@
+import { Meta, Story } from '@storybook/addon-docs'
+
+import { TypeachButton } from '../../index.ts'
+
+<Meta
+  title="Button"
+  component={TypeachButton}
+  argTypes={{ color: { control: { type: 'select' } } }}
+/>
+
+export const Template = args => ({
+  components: { TypeachButton },
+  setup() {
+    return { args }
+  },
+  template: `<TypeachButton v-bind="args">{{ args.title }}</TypeachButton>`,
+})
+
+<Story
+  name="Button"
+  args={{
+    color: 'primary',
+  }}
+>
+  {Template.bind({})}
+</Story>
