@@ -1,6 +1,6 @@
 {
   "references": [{ "path": "./tsconfig.node.json" }],
-  "exclude": ["**/*.cy.ts", "**/*.spec.ts"],
+  "exclude": ["**/*.cy.ts", "**/*.spec.ts", "**/*.story.ts"],
   "include": ["src"],
   "compilerOptions": {
     "target": "esnext",

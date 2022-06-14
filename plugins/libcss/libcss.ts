@@ -1,4 +1,5 @@
 import { readFileSync, writeFileSync, renameSync } from 'fs'
+import { resolve } from 'path'
 
 import { Plugin, ResolvedConfig } from 'vite'
 
@@ -36,10 +37,12 @@ const libcss = (): Plugin => ({
         encoding: 'utf8',
       })
 
-      writeFileSync(
-        `${paths.component}/index.es.js`,
-        `import './${name}.css';\n${data}`
-      )
+      if (componentName !== 'dist') {
+        writeFileSync(
+          `${paths.component}/index.es.js`,
+          `import './${name}.css';\n${data}`
+        )
+      }
     })
   },
 

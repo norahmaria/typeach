@@ -7,3 +7,8 @@ Features:
   ☐ SVG Imports 
   ✔ Eslint @done(22-05-07 08:56)
   ✔ Git (Pre) Commit Hook @done(22-05-07 10:59)
+
+Issues:
+  ☐ Global Style not visible in storybook
+  ☐ Global style not built and imported properly
+    ☐ No index.es.js file in components folder
