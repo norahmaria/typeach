@@ -1,0 +1,29 @@
+name: "Run Cypress Tests"
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/test.yml"
+      - "cypress"
+      - "src"
+      - "cypress.config.js"
+      - "env.d.ts"
+      - "package-lock.json"
+      - "package.json"
+      - "tsconfig.*.json"
+      - "tsconfig.json"
+      - "vite.config.mts"
+
+jobs:
+  test:
+    name: "Run component tests"
+    runs-on: ubuntu-22.04
+    steps:
+      - name: "Checkout"
+        uses: actions/checkout@v4
+      - name: "Run tests"
+        uses: cypress-io/github-action@v6
+        with:
+          component: true
+          browser: chrome

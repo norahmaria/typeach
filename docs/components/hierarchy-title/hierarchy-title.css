@@ -1,0 +1,26 @@
+.hierarchy-title {
+  text-align: center;
+}
+
+h2.peachy-hierarchy-title,
+h3.peachy-hierarchy-title,
+h4.peachy-hierarchy-title {
+  line-height: 100%;
+  font-weight: var(--fw-bold);
+}
+
+h2.peachy-hierarchy-title {
+  font-size: 120%;
+}
+
+h2.peachy-hierarchy-title:not(:first-child) {
+  padding-top: 1rem;
+}
+
+h3.peachy-hierarchy-title {
+  font-size: 90%;
+}
+
+h4.peachy-hierarchy-title {
+  font-size: 80%;
+}

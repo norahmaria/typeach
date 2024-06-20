@@ -1,0 +1,79 @@
+.peachy-toast {
+  margin: 1.25rem 1rem auto auto;
+  width: var(--component-width);
+
+  padding: 1em 2em 1em 1em;
+  background: var(--bg);
+  border: 1px solid var(--divider);
+  border-radius: 8px;
+
+  box-shadow: var(--shadow);
+}
+
+.peachy-toast__action {
+  cursor: pointer;
+  border: none;
+
+  margin-top: 0.75rem;
+
+  padding: 0.35em 0.75em;
+  background: var(--brand-button-bg);
+  border-radius: 10rem;
+
+  font-size: 100%;
+  color: var(--brand-button-text);
+
+  transition: background 0.25s;
+}
+
+.peachy-toast__action:hover,
+.peachy-toast__action:focus-visible {
+  background: var(--brand-button-hover-bg);
+}
+
+.peachy-toast__close {
+  cursor: pointer;
+
+  position: absolute;
+  border-radius: 100%;
+  background: none;
+  border: none;
+
+  display: grid;
+  place-content: center;
+
+  top: 1rem;
+  right: 1rem;
+
+  padding: var(--icon-button-padding);
+
+  color: var(--color);
+  font-size: 100%;
+
+  transition: background 0.25s;
+}
+
+.peachy-toast__close:hover {
+  background: var(--button-hover-bg);
+}
+
+.peachy-toast__close svg {
+  width: var(--icon-size);
+  height: var(--icon-size);
+}
+
+/* ===== Animation ===== */
+
+.peachy-toast:popover-open {
+  animation: SlideIn 0.25s;
+}
+
+@keyframes SlideIn {
+  from {
+    right: -20rem;
+  }
+
+  to {
+    right: 0;
+  }
+}

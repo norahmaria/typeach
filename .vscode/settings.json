@@ -1,0 +1,50 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+
+  "cSpell.ignoreWords": [
+    "plusplus",
+    "vueuse",
+    "rushstack",
+    "unref",
+    "describeby",
+    "menuitemradio",
+    "menuitemcheckbox",
+    "toggletip"
+  ],
+
+  "cSpell.words": [
+    "comparee",
+    "Typeahead",
+    "describedby",
+    "labelledby",
+    "haspopup",
+    "behaviour",
+    "typeach",
+    "vuejs",
+    "linebreak",
+    "paren",
+    "parens",
+    "listbox",
+    "tablist",
+    "tabpanel",
+    "activedescendant",
+    "multiselectable",
+    "vitepress"
+  ],
+
+  "material-icon-theme.folders.associations": {
+    "peaches": "shared",
+    "typeach": "middleware",
+    ".peachy": "shared",
+    "tsconfig": "typescript",
+    "support": "command",
+    "dom": "views",
+    "sub-tests": "test"
+  },
+
+  "material-icon-theme.files.associations": {
+    "tsconfig.cy.json": "tsconfig"
+  }
+}

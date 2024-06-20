@@ -1,0 +1,49 @@
+.peachy-input__group {
+  border: none;
+}
+
+.peachy-input__group-label {
+  font-weight: var(--fw-bold);
+}
+
+.date-range-picker-wrapper {
+  display: grid;
+  gap: calc(var(--gap) * 2);
+  grid-template-columns: 1fr auto 1fr;
+  justify-content: center;
+}
+
+.date-range-picker-wrapper .peachy-input {
+  grid-template-columns: auto max-content;
+}
+
+.date-range-arrow-wrapper {
+  display: grid;
+  place-content: center;
+  flex-grow: 1;
+}
+
+.date-range-picker-wrapper .arrow {
+  padding-top: 0.5rem;
+  height: var(--icon-size);
+  width: var(--icon-size);
+}
+
+.peachy-date-picker__day[aria-pressed="true"][data-edge="false"] {
+  opacity: 0.75;
+}
+
+@media only screen and (max-width: 45rem) {
+  .date-range-picker-wrapper {
+    grid-template-columns: 1fr;
+  }
+
+  .date-picker-inputs-wrapper {
+    width: 15rem;
+  }
+
+  .arrow {
+    transform-origin: center;
+    transform: rotate(90deg);
+  }
+}

@@ -1,0 +1,18 @@
+.peachy-input__group {
+  width: 12rem;
+}
+
+.peachy-input.checkbox:has(.peachy-checkbox__parent) {
+  flex-wrap: wrap;
+  display: flex;
+  gap: var(--gap);
+}
+
+.peachy-input.checkbox:not(:has(.peachy-checkbox-parent)) {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+.peachy-checkbox__input:indeterminate {
+  background-color: var(--warning-color);
+}

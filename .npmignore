@@ -1,0 +1,17 @@
+# Logs
+*.log
+yarn-error.log*
+logs
+.todo
+*.todo
+
+# General
+*.local
+.DS_Store
+
+# Git and workflow
+.husky
+.git
+.github
+.vscode
+docs

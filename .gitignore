@@ -1,0 +1,12 @@
+# Logs
+*.log
+yarn-error.log*
+logs
+.todo
+*.todo
+
+# General
+*.local
+.DS_Store
+node_modules
+/dist

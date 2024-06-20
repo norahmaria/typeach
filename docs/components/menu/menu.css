@@ -1,0 +1,144 @@
+.peachy-menu__target {
+  background: none;
+  border: none;
+}
+
+.peachy-menu__list {
+  list-style: none;
+
+  padding: 0.75rem 0.5rem;
+  margin: 0.5rem;
+
+  display: grid;
+  gap: 0.25rem;
+
+  border-radius: var(--border-radius);
+  background: var(--bg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.peachy-menu__item {
+  cursor: pointer;
+}
+
+.peachy-menu__item[aria-disabled="true"] {
+  cursor: default;
+  opacity: 0.5;
+}
+
+.peachy-menu__item,
+.peachy-menu__label {
+  border: none;
+  background: transparent;
+
+  border-radius: calc(var(--border-radius) / 2);
+
+  height: var(--button-height);
+  padding: 0.75em;
+
+  font-size: 90%;
+  color: var(--text);
+  line-height: 1;
+
+  transition: background 0.25s;
+}
+
+.peachy-menu__item:hover,
+.peachy-menu__item:focus-visible {
+  background: var(--button-hover-bg);
+}
+
+.peachy-menu__sub-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--gap);
+}
+
+.peachy-menu__sub-trigger:has(+ :popover-open) {
+  background: var(--button-bg);
+}
+
+.peachy-menu__label {
+  opacity: 0.7;
+  font-size: 85%;
+  text-transform: uppercase;
+
+  padding: 0 0.75em;
+  height: 1.25rem;
+}
+
+.peachy-menu__separator + .peachy-menu__label {
+  margin-top: 12px;
+}
+
+.peachy-menu__separator {
+  width: 100%;
+  margin: 8px 0 8px 0;
+  border: 0;
+
+  border-top: 2px solid var(--divider);
+}
+
+.peachy-menu__checkbox-item,
+.peachy-menu__radio-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: var(--gap);
+}
+
+/* ===== Animation ===== */
+
+.peachy-menu__target:popover-open {
+  animation: FadeIn 0.25s;
+}
+
+@keyframes FadeIn {
+  from {
+    opacity: 0;
+  }
+}
+
+/* ===== Checkboxes and radios ===== */
+
+.peachy-menu__checkbox-item > .checkbox,
+.peachy-menu__radio-item > .radio {
+  position: relative;
+  width: 0.6rem;
+  height: 0.6rem;
+
+  border: 1.5px solid var(--brand-color);
+}
+
+.peachy-menu__checkbox-item > .checkbox {
+  border-radius: 1px;
+}
+
+.peachy-menu__radio-item > .radio {
+  border-radius: 100%;
+}
+
+.peachy-menu__checkbox-item[aria-checked="true"] > .checkbox {
+  border: none;
+  background: transparent;
+}
+
+.peachy-menu__checkbox-item[aria-checked="true"] > .checkbox::before {
+  position: absolute;
+  content: "\2713";
+  inset: 0;
+
+  color: var(--brand-color);
+  line-height: 1;
+  font-size: 0.8em;
+  font-weight: var(--fw-bold);
+
+  transform-origin: center;
+  transform: scale(1.2);
+}
+
+.peachy-menu__radio-item[aria-checked="true"] > .radio {
+  background: var(--brand-color);
+}

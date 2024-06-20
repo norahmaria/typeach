@@ -1,0 +1,17 @@
+.peachy-input__group {
+  display: grid;
+  gap: var(--gap);
+  border: none;
+}
+
+.peachy-input__group-label {
+  min-width: max-content;
+  padding-bottom: 0.5rem;
+  font-weight: var(--fw-bold);
+}
+
+.checkbox-children-wrapper {
+  padding-left: 2rem;
+  display: grid;
+  gap: var(--gap);
+}
