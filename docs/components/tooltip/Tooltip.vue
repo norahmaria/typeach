@@ -1,9 +1,7 @@
 <!-- #region snippet -->
 <template>
   <PeachyTooltip.Tooltip>
-    <PeachyTooltip.Trigger>
-      Tooltip
-    </PeachyTooltip.Trigger>
+    <PeachyTooltip.Trigger>Tooltip</PeachyTooltip.Trigger>
 
     <PeachyTooltip.Target>
       <span>Target</span>
@@ -13,5 +11,5 @@
 <!-- #endregion snippet -->
 
 <script lang="ts" setup>
-  import { PeachyTooltip } from "../../../src";
+  import { PeachyTooltip } from "@/index";
 </script>

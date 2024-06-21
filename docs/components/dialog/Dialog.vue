@@ -1,9 +1,7 @@
 <!-- #region snippet -->
 <template>
   <PeachyDialog.Dialog>
-    <PeachyDialog.Trigger>
-      Open
-    </PeachyDialog.Trigger>
+    <PeachyDialog.Trigger>Open</PeachyDialog.Trigger>
 
     <Teleport to="body">
       <PeachyDialog.Target>
@@ -11,14 +9,9 @@
           <CrossSvg />
         </PeachyDialog.Close>
 
+        <PeachyDialog.Title>Title</PeachyDialog.Title>
 
-        <PeachyDialog.Title>
-          Title
-        </PeachyDialog.Title>
-
-        <PeachyDialog.Description>
-          Description
-        </PeachyDialog.Description>
+        <PeachyDialog.Description>Description</PeachyDialog.Description>
 
         Content
       </PeachyDialog.Target>
@@ -28,7 +21,7 @@
 <!-- #endregion snippet -->
 
 <script lang="ts" setup>
-  import { PeachyDialog } from "../../../src/";
+  import { PeachyDialog } from "@/index";
 
   import CrossSvg from "./CrossSvg.vue";
 </script>

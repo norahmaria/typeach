@@ -48,9 +48,10 @@
 
 <script lang="ts" setup>
   import { ref } from "vue";
-  import { PeachyCheckbox, PeachyInput } from "../../../src";
 
-  import type { CheckboxState } from "../../../src/components/inputs/checkbox/context";
+  import { PeachyCheckbox, PeachyInput } from "@/index";
+
+  import type { CheckboxState } from "@/components/inputs/checkbox/context";
 
   import CheckboxSvg from "./CheckboxSvg.vue";
 

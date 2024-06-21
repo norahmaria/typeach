@@ -15,7 +15,7 @@
   import { ref, inject } from "vue";
   import { watchImmediate } from "@vueuse/core";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { MenuContextKey, type MenuContext } from "./context";
 

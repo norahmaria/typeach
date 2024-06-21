@@ -15,7 +15,7 @@
   import { provide, readonly, ref, toRef, watch } from "vue";
   import { useInterval } from "@vueuse/core";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { TabsContextKey } from "./context";
 

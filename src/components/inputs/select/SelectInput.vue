@@ -8,9 +8,9 @@
   import { provide, readonly as vueReadonly, ref, toRef, watch } from "vue";
   import { watchImmediate } from "@vueuse/core";
 
-  import { useListBox, useInput } from "../../../hooks";
+  import { useListBox, useInput } from "@/hooks";
 
-  import { PeachyPopover, type PopoverExpose } from "../../popover";
+  import { PeachyPopover, type PopoverExpose } from "@/components/popover";
 
   import { SelectContextKey } from "./context";
 

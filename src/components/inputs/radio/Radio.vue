@@ -20,7 +20,7 @@
 <script lang="ts" setup>
   import { inject, unref, provide, toRef, computed } from "vue";
 
-  import { createRandomId, usePeachyClasses } from "../../../hooks";
+  import { createRandomId, usePeachyClasses } from "@/hooks";
 
   import {
     RadioContextKey,

@@ -8,7 +8,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   export interface MenuSeparatorProps {
     /**

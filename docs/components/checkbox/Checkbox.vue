@@ -17,7 +17,7 @@
 <script lang="ts" setup>
   import { ref } from "vue";
 
-  import { PeachyCheckbox, PeachyInput } from "../../../src";
+  import { PeachyCheckbox, PeachyInput } from "@/index";
 
   import CheckboxSvg from "./CheckboxSvg.vue";
 

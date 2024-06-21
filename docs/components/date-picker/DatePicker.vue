@@ -109,15 +109,12 @@
 
   import {
     dayJs,
-    type DayJs,
-  } from "../../../src/components/inputs/date-picker/utils";
-
-  import {
     PeachyDatePicker,
     PeachyDialog,
     PeachyVisuallyHidden,
     PeachyInput,
-  } from "../../../src/";
+    type DayJs,
+  } from "@/index";
 
   import ChevronSvg from "./ChevronSvg.vue";
   import CalendarSvg from "./CalendarSvg.vue";
@@ -130,7 +127,7 @@
 
   const focusedDate = ref(dayJs());
 
-  function capitalize(string) {
+  function capitalize(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 

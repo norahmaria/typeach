@@ -8,7 +8,7 @@
 <script lang="ts" generic="T" setup>
   import { inject, unref } from "vue";
 
-  import { usePeachyClasses, InputContextKey } from "../../../hooks";
+  import { usePeachyClasses, InputContextKey } from "@/hooks";
 
   const { labelClass } = usePeachyClasses("input", ["label"]);
 

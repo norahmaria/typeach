@@ -16,7 +16,7 @@
 <script lang="ts" setup>
   import { inject, provide, nextTick, ref, unref } from "vue";
 
-  import { useKeyboardList, usePeachyClasses } from "../../hooks";
+  import { useKeyboardList, usePeachyClasses } from "@/hooks";
 
   import { TabsContextKey, TabsListContextKey } from "./context";
 

@@ -1,9 +1,7 @@
 <!-- #region snippet -->
 <template>
   <PeachyToggletip.Toggletip>
-    <PeachyToggletip.Trigger>        
-      Toggletip
-    </PeachyToggletip.Trigger>
+    <PeachyToggletip.Trigger>Toggletip</PeachyToggletip.Trigger>
 
     <PeachyToggletip.Target>
       <span>Toggletips can include short texts.</span>
@@ -13,5 +11,5 @@
 <!-- #endregion snippet -->
 
 <script lang="ts" setup>
-  import { PeachyToggletip } from "../../../src/components";
+  import { PeachyToggletip } from "@/index";
 </script>

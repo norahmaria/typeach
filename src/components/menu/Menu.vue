@@ -7,7 +7,7 @@
 <script lang="ts" setup>
   import { inject, provide, ref } from "vue";
 
-  import { useKeyboardList } from "../../hooks";
+  import { useKeyboardList } from "@/hooks";
 
   import { PeachyPopover, type PopoverExpose } from "../popover";
 

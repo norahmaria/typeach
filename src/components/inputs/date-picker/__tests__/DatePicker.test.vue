@@ -94,7 +94,7 @@
     PeachyDialog,
     PeachyVisuallyHidden,
     PeachyInput,
-  } from "../../../";
+  } from "@/index";
 
   const emit = defineEmits<{
     "update:date": [date: DayJs | undefined];
@@ -104,7 +104,7 @@
 
   const focusedDate = ref(dayJs(new Date("12 December, 2023")));
 
-  function capitalize(string) {
+  function capitalize(string: string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 

@@ -12,7 +12,7 @@
   import { onMounted, ref } from "vue";
   import type { Placement } from "@floating-ui/vue";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { PeachyPopover, type PopoverExpose } from "../popover";
 

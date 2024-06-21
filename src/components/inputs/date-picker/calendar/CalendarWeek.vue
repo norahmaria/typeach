@@ -9,9 +9,9 @@
 </template>
 
 <script lang="ts" setup>
-  import { inject, nextTick, ref } from "vue";
+  import { inject, ref } from "vue";
 
-  import { useKeyboardList, usePeachyClasses } from "../../../../hooks";
+  import { useKeyboardList, usePeachyClasses } from "@/hooks";
 
   import { DatePickerCalendarContextKey } from "../context";
   import { dayJs } from "../utils";

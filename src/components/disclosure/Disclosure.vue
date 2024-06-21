@@ -7,7 +7,7 @@
 <script lang="ts" setup>
   import { ref, provide, watch, toRef, readonly } from "vue";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { DisclosureContextKey } from "./context";
 

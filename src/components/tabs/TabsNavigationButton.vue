@@ -13,7 +13,7 @@
 <script lang="ts" setup>
   import { inject } from "vue";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { TabsContextKey } from "./context";
 

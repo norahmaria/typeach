@@ -78,7 +78,7 @@
 <script lang="ts" setup>
   import { ref, watch } from "vue";
 
-  import { PeachyInput, PeachySelect } from "../../../src/components";
+  import { PeachyInput, PeachySelect } from "@/index";
 
   import ChevronSvg from "./ChevronSvg.vue";
   import CheckboxSvg from "./CheckboxSvg.vue";

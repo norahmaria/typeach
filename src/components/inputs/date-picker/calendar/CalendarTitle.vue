@@ -10,11 +10,11 @@
   import { inject, toRef } from "vue";
   import { watchImmediate } from "@vueuse/core";
 
-  import { usePeachyClasses, createRandomId } from "../../../../hooks";
+  import { usePeachyClasses, createRandomId } from "@/hooks";
 
   import { DatePickerCalendarContextKey } from "../context";
 
-  import HierarchyTitle from "../../../HierarchyTitle.vue";
+  import HierarchyTitle from "@/components/HierarchyTitle.vue";
 
   export interface CalendarTitleProps {
     id?: string;

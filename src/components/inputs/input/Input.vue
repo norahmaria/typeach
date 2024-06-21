@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" generic="T" setup>
-  import { usePeachyClasses } from "../../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   export interface InputProps {
     is?: string;

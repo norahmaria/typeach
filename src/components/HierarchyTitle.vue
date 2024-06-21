@@ -14,7 +14,7 @@
 <script lang="ts" setup>
   import { computed, inject, provide } from "vue";
 
-  import { usePeachyClasses } from "../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   export interface HierarchyTitleProps {
     /**

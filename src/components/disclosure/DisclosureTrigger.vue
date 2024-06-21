@@ -19,7 +19,7 @@
   import { inject, toRef, unref } from "vue";
   import { watchImmediate } from "@vueuse/core";
 
-  import { usePeachyClasses, createRandomId } from "../../hooks";
+  import { usePeachyClasses, createRandomId } from "@/hooks";
 
   import { DisclosureContextKey } from "./context";
 

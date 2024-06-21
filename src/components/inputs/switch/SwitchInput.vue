@@ -14,7 +14,7 @@
 <script lang="ts" setup>
   import { ref, watch, toRef } from "vue";
 
-  import { createRandomId, usePeachyClasses, useInput } from "../../../hooks";
+  import { createRandomId, usePeachyClasses, useInput } from "@/hooks";
 
   export interface SwitchProps {
     on?: boolean;

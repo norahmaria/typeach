@@ -1,0 +1,16 @@
+{
+  "extends": "@vue/tsconfig/tsconfig.dom.json",
+  "include": ["docs", "env.d.ts", "src/**/*", "src/**/*.vue"],
+  "exclude": ["src/**/__tests__/*"],
+  "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
+    "composite": true,
+    "baseUrl": ".",
+    "lib": ["ESNext", "DOM", "DOM.Iterable"],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  }
+}

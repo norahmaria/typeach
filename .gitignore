@@ -10,3 +10,7 @@ logs
 .DS_Store
 node_modules
 /dist
+
+# Docs
+docs/.vitepress/cache
+docs/.vitepress/dist

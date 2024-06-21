@@ -35,7 +35,7 @@
     isHtmlElement,
     usePeachyClasses,
     useInput,
-  } from "../../../hooks";
+  } from "@/hooks";
 
   import { isTextInput } from "../utils";
 

@@ -84,12 +84,9 @@ export default defineConfig({
     },
   },
 
-  /**
-   * @TODO Figure out why this won't work.
-   */
   vite: {
     resolve: {
-      alias: { "@/": fileURLToPath(new URL("../src", import.meta.url)) },
+      alias: { "@": fileURLToPath(new URL("../../src", import.meta.url)) },
     },
   },
 });

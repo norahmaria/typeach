@@ -30,8 +30,7 @@
 <script lang="ts" setup>
   import { watch, ref } from "vue";
 
-  import type { DayJs } from "../../../src/components/inputs/date-picker/utils";
-  import { PeachyInput } from "../../../src";
+  import { PeachyInput, type DayJs } from "@/index";
 
   import DatePickerWrapper from "./DatePickerForRange.vue";
 

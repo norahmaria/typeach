@@ -17,7 +17,7 @@
 <!-- #endregion snippet -->
 
 <script lang="ts" setup>
-  import { PeachyDisclosure } from "../../../src";
+  import { PeachyDisclosure } from "@/index";
 
   import ChevronSvg from "./ChevronSvg.vue";
 </script>

@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" generic="T" setup>
-  import { usePeachyClasses } from "../../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   const { indicatorClass } = usePeachyClasses("switch", ["indicator"]);
 </script>

@@ -29,7 +29,7 @@
 <script lang="ts" setup>
   import { ref } from "vue";
 
-  import { PeachyInput, PeachyTextInput } from "../../../src";
+  import { PeachyInput, PeachyTextInput } from "@/index";
 
   import WarningSvg from "./WarningSvg.vue";
 

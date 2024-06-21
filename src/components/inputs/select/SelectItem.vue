@@ -28,7 +28,7 @@
     unref,
   } from "vue";
 
-  import { usePeachyClasses } from "../../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { SelectContextKey, SelectItemContextKey } from "./context";
 

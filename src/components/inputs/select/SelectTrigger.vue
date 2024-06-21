@@ -21,9 +21,9 @@
     createRandomId,
     isPrintableCharacter,
     usePeachyClasses,
-  } from "../../../hooks";
+  } from "@/hooks";
 
-  import { PeachyPopover, type PopoverExpose } from "../../popover";
+  import { PeachyPopover, type PopoverExpose } from "@/components/popover";
 
   import { SelectContextKey } from "./context";
 

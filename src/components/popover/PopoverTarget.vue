@@ -19,7 +19,7 @@
 
   import { useFloating, flip, shift, type Placement } from "@floating-ui/vue";
 
-  import { createRandomId } from "../../hooks";
+  import { createRandomId } from "@/hooks";
 
   import {
     PopoverContextKey,

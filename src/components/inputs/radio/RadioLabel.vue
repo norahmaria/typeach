@@ -7,7 +7,9 @@
 
 <script lang="ts" setup>
   import { inject, unref } from "vue";
-  import { usePeachyClasses } from "../../../hooks";
+
+  import { usePeachyClasses } from "@/hooks";
+
   import { RadioContextKey } from "./context";
 
   const { labelClass } = usePeachyClasses("radio", ["label"]);

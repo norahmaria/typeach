@@ -23,7 +23,7 @@
     onClickOutside,
   } from "@vueuse/core";
 
-  import { usePeachyClasses, createRandomId } from "../../hooks";
+  import { usePeachyClasses, createRandomId } from "@/hooks";
 
   import { DialogContextKey, updateDialog } from "./context";
 

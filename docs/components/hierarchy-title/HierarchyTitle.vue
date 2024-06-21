@@ -3,11 +3,11 @@
   <div class="hierarchy-title">
     <PeachyHierarchyTitle>
       <template #title>A H2 heading</template>
-        
+
       <PeachyHierarchyTitle>
         <template #title>A H3 heading</template>
-       </PeachyHierarchyTitle>
-       
+      </PeachyHierarchyTitle>
+
       <PeachyHierarchyTitle>
         <template #title>A H3 heading</template>
       </PeachyHierarchyTitle>
@@ -15,7 +15,7 @@
 
     <PeachyHierarchyTitle>
       <template #title>A H2 heading</template>
-        
+
       <PeachyHierarchyTitle>
         <template #title>A H3 heading</template>
 
@@ -29,5 +29,5 @@
 <!-- #endregion snippet -->
 
 <script lang="ts" setup>
-  import { PeachyHierarchyTitle } from "../../../src";
+  import { PeachyHierarchyTitle } from "@/index";
 </script>

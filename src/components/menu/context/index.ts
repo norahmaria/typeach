@@ -1,7 +1,7 @@
 import type { DeepReadonly, InjectionKey, Ref } from "vue";
 
-import type { PopoverExpose } from "../../../components/popover";
-import type { useKeyboardList } from "../../..//hooks";
+import type { PopoverExpose } from "@/components/popover";
+import type { useKeyboardList } from "@/hooks";
 
 export type MenuContext = {
   isRoot: boolean;

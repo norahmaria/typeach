@@ -11,7 +11,7 @@
 <script lang="ts" generic="T" setup>
   import { inject, unref } from "vue";
 
-  import { usePeachyClasses } from "../../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { RadioContextKey } from "./context";
 

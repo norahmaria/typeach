@@ -14,7 +14,7 @@
 <script lang="ts" generic="T" setup>
   import { inject, onMounted, ref, unref } from "vue";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { DialogContextKey } from "./context";
 

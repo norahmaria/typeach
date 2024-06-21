@@ -7,6 +7,11 @@
   import { watchImmediate } from "@vueuse/core";
 
   import {
+    DialogContextKey,
+    type DialogContext,
+  } from "@/components/dialog/context";
+
+  import {
     dayJs,
     getDatesWithinMonth,
     groupDatesByWeek,
@@ -18,11 +23,6 @@
     DatePickerContextKey,
     DatePickerCalendarContextKey,
   } from "../context";
-
-  import {
-    DialogContextKey,
-    type DialogContext,
-  } from "../../../../components/dialog/context";
 
   export interface CalendarProps {
     date?: DayJs;

@@ -9,7 +9,7 @@
 <script lang="ts" setup>
   import { computed, onMounted, ref } from "vue";
 
-  import { PeachyProgress } from "../../../src";
+  import { PeachyProgress } from "@/index";
 
   const progress = ref(0);
 

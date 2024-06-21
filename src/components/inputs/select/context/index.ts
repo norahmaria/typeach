@@ -1,7 +1,7 @@
 import type { ComputedRef, DeepReadonly, InjectionKey, Ref } from "vue";
 
-import type { PopoverExpose } from "../../../../components/popover";
-import type { UseListBox } from "../../../../hooks";
+import type { PopoverExpose } from "@/components/popover";
+import type { UseListBox } from "@/hooks";
 
 export interface SelectContext {
   readonly: DeepReadonly<Ref<boolean>>;

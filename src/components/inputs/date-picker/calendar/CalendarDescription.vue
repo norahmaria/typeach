@@ -5,7 +5,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { usePeachyClasses } from "../../../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   const { descriptionClass } = usePeachyClasses("datePicker", ["description"]);
 </script>

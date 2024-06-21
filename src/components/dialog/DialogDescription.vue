@@ -8,7 +8,7 @@
   import { inject, toRef } from "vue";
   import { watchImmediate } from "@vueuse/core";
 
-  import { usePeachyClasses, createRandomId } from "../../hooks";
+  import { usePeachyClasses, createRandomId } from "@/hooks";
 
   import { DialogContextKey } from "./context";
 

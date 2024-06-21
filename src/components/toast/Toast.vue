@@ -17,7 +17,7 @@
   import { provide, watch, ref, nextTick, toRef } from "vue";
   import { watchImmediate } from "@vueuse/core";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { ToastContextKey } from "./context";
 

@@ -14,7 +14,7 @@
 <script lang="ts" setup>
   import { inject, computed, unref, toRef } from "vue";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { TabsContextKey } from "./context";
 

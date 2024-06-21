@@ -29,7 +29,7 @@
 <script lang="ts" setup>
   import { inject, computed, nextTick, ref, toRef } from "vue";
 
-  import { usePeachyClasses } from "../../../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { isSameDate, type DayJs } from "../utils";
 

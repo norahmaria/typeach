@@ -45,6 +45,7 @@
   },
 
   "material-icon-theme.files.associations": {
-    "tsconfig.cy.json": "tsconfig"
+    "tsconfig.cy.json": "tsconfig",
+    "tsconfig.docs.json": "tsconfig"
   }
 }

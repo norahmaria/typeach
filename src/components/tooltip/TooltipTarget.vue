@@ -10,7 +10,7 @@
 <script lang="ts" setup>
   import type { Placement } from "@floating-ui/vue";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { PeachyPopover } from "../popover";
 

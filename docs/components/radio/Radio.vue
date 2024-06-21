@@ -29,7 +29,7 @@
 <script lang="ts" setup>
   import { ref } from "vue";
 
-  import { PeachyInput, PeachyRadio } from "../../../src";
+  import { PeachyInput, PeachyRadio } from "@/index";
 
   const selected = ref("1");
 </script>

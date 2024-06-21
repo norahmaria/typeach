@@ -14,8 +14,10 @@
 
 <script lang="ts" setup>
   import { inject, onMounted, ref, unref } from "vue";
+
+  import { usePeachyClasses } from "@/hooks";
+
   import { SelectContextKey } from "./context";
-  import { usePeachyClasses } from "../../../hooks";
 
   const select = inject(SelectContextKey);
 

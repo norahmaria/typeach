@@ -39,7 +39,7 @@
 
   import { watchDeep, watchImmediate } from "@vueuse/core";
 
-  import { usePeachyClasses, createRandomId, useInput } from "../../../hooks";
+  import { usePeachyClasses, createRandomId, useInput } from "@/hooks";
 
   import {
     CheckboxContextKey,

@@ -16,7 +16,7 @@
 <script lang="ts" setup>
   import { provide, readonly, ref, toRef, watch } from "vue";
 
-  import { createRandomId, usePeachyClasses, useInput } from "../../../hooks";
+  import { createRandomId, usePeachyClasses, useInput } from "@/hooks";
 
   import { RadioGroupContextKey, type RadioGroupContext } from "./context";
   import { watchImmediate } from "@vueuse/core";

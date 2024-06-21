@@ -13,7 +13,7 @@
 <script lang="ts" setup>
   import { ref } from "vue";
 
-  import { PeachyInput, PeachySwitch } from "../../../src";
+  import { PeachyInput, PeachySwitch } from "@/index";
 
   const on = ref(false);
 </script>

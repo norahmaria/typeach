@@ -5,8 +5,8 @@
 </template>
 
 <script lang="ts" setup>
-  import { usePeachyClasses } from "../../../hooks";
-  import { PeachyPopover } from "../../popover";
+  import { usePeachyClasses } from "@/hooks";
+  import { PeachyPopover } from "@/components/popover";
 
   const { targetClass } = usePeachyClasses("select", ["target"]);
 </script>

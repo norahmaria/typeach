@@ -11,7 +11,7 @@
 <script lang="ts" setup>
   import { ref } from "vue";
 
-  import { usePeachyClasses } from "../../hooks";
+  import { usePeachyClasses } from "@/hooks";
 
   import { PeachyPopover, type PopoverExpose } from "../popover";
 

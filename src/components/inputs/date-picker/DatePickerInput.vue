@@ -18,7 +18,7 @@
 <script lang="ts" setup>
   import { ref, watch, toRef, readonly, provide, unref, computed } from "vue";
 
-  import { createRandomId, usePeachyClasses, useInput } from "../../../hooks";
+  import { createRandomId, usePeachyClasses, useInput } from "@/hooks";
 
   import { isTextInput } from "../utils";
 

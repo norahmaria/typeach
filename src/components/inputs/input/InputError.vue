@@ -8,11 +8,7 @@
 <script lang="ts" generic="T" setup>
   import { inject, ref, onBeforeUnmount, onMounted } from "vue";
 
-  import {
-    usePeachyClasses,
-    createRandomId,
-    InputContextKey,
-  } from "../../../hooks";
+  import { usePeachyClasses, createRandomId, InputContextKey } from "@/hooks";
 
   export interface InputLabelProps {
     id?: string;
