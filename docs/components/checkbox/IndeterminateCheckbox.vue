@@ -1,6 +1,6 @@
 <!-- #region snippet -->
 <template>
-  <PeachyInput.Group>
+  <PeachyInput.Group class="indeterminate-checkbox-wrapper">
     <PeachyInput.GroupLabel>Indeterminate checkboxes</PeachyInput.GroupLabel>
 
     <PeachyInput.Input class="checkbox">
