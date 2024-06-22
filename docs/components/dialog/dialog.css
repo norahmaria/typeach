@@ -55,12 +55,14 @@
 
 /* ===== Animation ===== */
 
-.peachy-dialog__target[open]:not(.date-picker-dialog) {
-  animation: ScaleIn 0.25s;
-}
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-dialog__target[open]:not(.date-picker-dialog) {
+    animation: ScaleIn 0.25s;
+  }
 
-.peachy-dialog__target[open]:not(.date-picker-dialog)::backdrop {
-  animation: FadeIn 0.25s;
+  .peachy-dialog__target[open]:not(.date-picker-dialog)::backdrop {
+    animation: FadeIn 0.25s;
+  }
 }
 
 @keyframes ScaleIn {

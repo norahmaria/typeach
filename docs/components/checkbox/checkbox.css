@@ -50,9 +50,13 @@
 
 .peachy-checkbox__indicator svg {
   color: var(--brand-button-text);
-
-  animation: ScaleIn 0.25s;
   width: var(--icon-size);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-checkbox__indicator svg {
+    animation: ScaleIn 0.25s;
+  }
 }
 
 /* ===== Animation ===== */

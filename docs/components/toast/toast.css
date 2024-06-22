@@ -64,8 +64,10 @@
 
 /* ===== Animation ===== */
 
-.peachy-toast:popover-open {
-  animation: SlideIn 0.25s;
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-toast:popover-open {
+    animation: SlideIn 0.25s;
+  }
 }
 
 @keyframes SlideIn {

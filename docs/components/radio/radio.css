@@ -85,8 +85,12 @@
   transition:
     background-color 0.25s,
     transform 0.25s;
+}
 
-  animation: ScaleIn 0.25s;
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-radio__indicator[data-checked="true"]::before {
+    animation: ScaleIn 0.25s;
+  }
 }
 
 /** ===== Animation ===== */

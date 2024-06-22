@@ -58,9 +58,11 @@
   max-height: 10rem;
 }
 
-.disclosure-enter-active,
-.disclosure-leave-active {
-  transition: max-height 0.25s;
+@media (prefers-reduced-motion: no-preference) {
+  .disclosure-enter-active,
+  .disclosure-leave-active {
+    transition: max-height 0.25s;
+  }
 }
 
 .disclosure-enter-from,
