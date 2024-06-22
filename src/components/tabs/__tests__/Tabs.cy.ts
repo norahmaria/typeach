@@ -157,8 +157,7 @@ describe("Keyboard navigation", () => {
   });
 
   /**
-   * @Todo Need to make changes to the menu component,
-   * as it would be nice to have <Menu /> be flexible in placement.
+   * @Todo Make changes to the menu component,
    */
   it.skip("{Shift} + {F10} Can open associated dropdown menu for tab", () => ({}));
 

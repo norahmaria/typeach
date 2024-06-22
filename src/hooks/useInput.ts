@@ -47,12 +47,6 @@ export const useInput = <T>(
   watchImmediate(errorIds, newErrorIds => {
     const inputElement = document.getElementById(id.value);
 
-    /**
-     * @TODO Could not update attributes directly in
-     * template without it messing up the selection
-     * for text based inputs, and it's too much
-     * of a hassle to manually reselect.
-     */
     if (isHtmlElement(inputElement)) {
       const describeBy = [...newErrorIds, ...descriptionIds.value].join(", ");
 
