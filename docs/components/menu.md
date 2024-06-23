@@ -25,18 +25,20 @@
   <PeachyMenu.Menu>
     <PeachyMenu.Trigger />
 
-    <PeachyMenu.List>
-      <PeachyMenu.Item />
-      <PeachyMenu.Label />
-      <PeachyMenu.CheckboxItem />
-      <PeachyMenu.Menu />
-      <PeachyMenu.Separator />
-
-      <PeachyMenu.RadioGroup>
+    <PeachyMenu.Target>
+      <PeachyMenu.List>
+        <PeachyMenu.Item />
         <PeachyMenu.Label />
-        <PeachyMenu.RadioItem />
-      </PeachyMenu.RadioGroup>
-    </PeachyMenu.List>
+        <PeachyMenu.CheckboxItem />
+        <PeachyMenu.Menu />
+        <PeachyMenu.Separator />
+
+        <PeachyMenu.RadioGroup>
+          <PeachyMenu.Label />
+          <PeachyMenu.RadioItem />
+        </PeachyMenu.RadioGroup>
+      </PeachyMenu.List>
+    </PeachyMenu.Target>
   </PeachyMenu.Menu>
 </template>
 
