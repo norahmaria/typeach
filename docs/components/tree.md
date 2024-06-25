@@ -87,9 +87,10 @@ It is recommended to let the user know when a parent has any children selected. 
 
 #### Emits
 
-| @       |  Payload  |
-| ------- | :-------: |
-| @toggle | `boolean` |
+| @       |  Payload  | Description                                              |
+| ------- | :-------: | -------------------------------------------------------- |
+| @toggle | `boolean` | Triggered when the selection for the item should toggle. |
+| @open   |           | Triggered when opened.                                   |
 
 ### `ItemLabel`
 
