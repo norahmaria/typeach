@@ -108,10 +108,13 @@
 
   width: 1.5rem;
   height: 1.5rem;
+  max-width: 1.5rem;
+  max-height: 1.5rem;
   border-radius: 4px;
   font-size: 1.6rem;
 
   transform: translateX(-0.8rem);
+  color: var(--brand-button-text);
 
   transition: background-color 0.25s;
   background-color: var(--border);
@@ -121,6 +124,10 @@
 .peachy-tree__item-indicator svg {
   width: 1rem;
   height: 1rem;
+}
+
+.peachy-tree__item-indicator svg path {
+  stroke: var(--brand-button-text);
 }
 
 .peachy-tree__item-indicator[aria-pressed="true"] {

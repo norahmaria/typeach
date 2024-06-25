@@ -53,6 +53,10 @@
   width: var(--icon-size);
 }
 
+.peachy-checkbox__indicator svg path {
+  stroke: var(--brand-button-text);
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .peachy-checkbox__indicator svg {
     animation: ScaleIn 0.25s;

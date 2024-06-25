@@ -47,6 +47,9 @@
   const triggerId = ref<string>("");
 
   const input = useInput(triggerId, internalSelectedIds, emit, {
+    /**
+     * @TODO Compare selections
+     */
     isSame(oldValue, newValue) {
       return true;
     },
