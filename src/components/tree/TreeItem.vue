@@ -80,6 +80,11 @@
   };
 
   provide(TreeItemContextKey, {
-    id: toRef(props, "id"),
+    id: idRef,
+    selected: toRef(props, "selected"),
+
+    toggle() {
+      emit("toggle");
+    },
   });
 </script>

@@ -9,6 +9,8 @@ export interface TreeContext {
 
 export interface TreeItemContext {
   id: Ref<string>;
+  selected: Ref<boolean>;
+  toggle(): void;
 }
 
 export const TreeContextKey: InjectionKey<TreeContext> = Symbol("peachy-tree");
