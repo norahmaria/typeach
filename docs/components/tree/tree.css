@@ -1,0 +1,113 @@
+.peachy-tree__tree {
+  grid-area: tree;
+}
+
+.peachy-tree__tree[role="tree"] {
+  width: 16rem;
+  margin-left: -2rem;
+}
+
+.peachy-tree__tree[role="group"] {
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  margin-left: 0.5rem;
+  padding-left: var(--gap);
+  border-left: 1px solid var(--border);
+
+  transition: border-color 0.25s;
+}
+
+.peachy-tree__tree[role="group"] {
+  margin-bottom: 0.5rem;
+}
+
+.peachy-tree__tree[role="tree"]
+  > .peachy-tree__item:not([aria-expanded])::before {
+  content: none;
+}
+
+.peachy-tree__item {
+  cursor: pointer;
+  padding-left: 0.25rem;
+  list-style: none;
+  display: grid;
+  gap: var(--gap);
+
+  grid-template-columns: 1rem 1fr 1rem;
+  grid-template-areas: "toggle title indicator" "tree tree tree";
+  align-items: center;
+}
+
+.peachy-tree__item[aria-expanded="true"] > svg {
+  transform-origin: center;
+  transform: rotate(90deg);
+}
+
+.tree-branch-title,
+.tree-item-title {
+  grid-area: title;
+}
+
+.peachy-tree__item:focus {
+  outline: none !important;
+}
+
+.peachy-tree__item-label {
+  width: calc(100% - 1rem);
+  padding: 0.25rem;
+  border-radius: var(--border-radius);
+}
+
+.peachy-tree__item:focus > .peachy-tree__item-label {
+  background-color: var(--button-bg);
+  /* outline: 3px solid var(--brand-color); */
+}
+
+.peachy-tree__item
+  > .peachy-tree__tree:has(> .peachy-tree__item[data-active="true"]) {
+  border-left-color: var(--text);
+}
+
+.peachy-tree__item-indicator[data-indeterminate="true"] {
+  background-color: var(--warning-color);
+}
+
+.peachy-tree__item-indicator svg {
+  display: none;
+}
+
+.peachy-tree__item-indicator[data-indeterminate="true"] svg,
+.peachy-tree__item[aria-selected="true"] > .peachy-tree__item-indicator svg {
+  display: block;
+}
+
+.peachy-tree__item-indicator {
+  grid-area: indicator;
+
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 4px;
+  font-size: 1.6rem;
+
+  transform: translateX(-0.8rem);
+
+  transition: background-color 0.25s;
+  background-color: var(--border);
+  border: none;
+}
+
+.peachy-tree__item-indicator svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.peachy-tree__item-indicator[aria-pressed="true"] {
+  background-color: var(--brand-button-bg);
+  color: var(--brand-button-text);
+}

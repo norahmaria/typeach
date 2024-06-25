@@ -46,6 +46,7 @@ export default defineConfig({
           { text: "Toast", link: "/toast" },
           { text: "Toggletip", link: "/toggletip" },
           { text: "Tooltip", link: "/tooltip" },
+          { text: "Tree", link: "/tree" },
 
           {
             text: "Inputs",
