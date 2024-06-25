@@ -1,7 +1,42 @@
 import { useTimeout } from "@vueuse/core";
-import { ref, watch, unref, onMounted, type Ref } from "vue";
+
+import {
+  ref,
+  watch,
+  unref,
+  onMounted,
+  inject,
+  provide,
+  computed,
+  type Ref,
+} from "vue";
 
 export type UseKeyboardListOptions = {
+  /**
+   * If you provide a key, the keyboard list
+   * will see if there's a usage further up
+   * with the same key, and then
+   * reuse that instance.
+   *
+   * This will also effect how it searches
+   * for items, as it will no longer only look
+   * through direct children, but do a full search,
+   * so please provide a `selector` when using.
+   */
+  key?: Symbol;
+
+  /**
+   * When a `key` is set, we sometimes do
+   * heavier searches with `querySelectorAll`,
+   * so it is recommended to provide a selector
+   * to limit the items to search for.
+   *
+   * Does literally nothing if `key` is not set.
+   *
+   * @default "*"
+   */
+  selector?: string;
+
   /**
    * The orientation of the list. This is used to
    * determine which arrow keys should be used to
@@ -195,7 +230,7 @@ const withModifierKey = (event: KeyboardEvent) =>
   event.altKey || event.ctrlKey || event.metaKey || event.shiftKey;
 
 export const isPrintableCharacter = (key: string) =>
-  key.length === 1 && key !== " ";
+  key.length === 1 && key !== " " && key !== "*";
 
 const isRepeatingCharacter = (string: string, newCharacter: string) =>
   string.length > 1 && string.split("").every(char => char === newCharacter);
@@ -271,6 +306,53 @@ export const findEdgeElement = (
   return edge as HTMLElement;
 };
 
+export const findEdgeElementFromQuery = (
+  by: "last" | "first",
+  selector: string,
+  container?: Element | null,
+  filter?: (element: HTMLElement) => boolean
+) => {
+  const items = container?.querySelectorAll(selector) ?? [];
+
+  const arrayOfItems = Array.from(items)
+    .filter((element): element is HTMLElement => isHtmlElement(element))
+    .filter(element => !filter || filter?.(element));
+
+  if (by === "last") {
+    return arrayOfItems[items.length - 1];
+  }
+
+  return arrayOfItems[0];
+};
+
+export const findRelativeElementFromQuery = (
+  by: "next" | "previous",
+  selector: string,
+  container?: Element | null,
+  start?: Element | null,
+  filter?: (element: HTMLElement) => boolean
+) => {
+  if (!start) {
+    return;
+  }
+
+  const items = container?.querySelectorAll(selector);
+
+  const arrayOfItems = Array.from(items ?? [])
+    .filter((element): element is HTMLElement => isHtmlElement(element))
+    .filter(element => !filter || filter?.(element));
+
+  const currentItemIndex = arrayOfItems.findIndex(item => {
+    return item.isSameNode(start!);
+  });
+
+  const nextNodeIndex = currentItemIndex + (by === "next" ? 1 : -1);
+
+  const nextNode = arrayOfItems[nextNodeIndex];
+
+  return nextNode;
+};
+
 /**
  * @TODO Add support for `PageUp` and `PageDown` keys.
  */
@@ -280,6 +362,7 @@ export const useKeyboardList = (
   options: UseKeyboardListOptions = {}
 ): UseKeyboardList => {
   const {
+    selector = "*",
     orientation = "vertical",
     loop = false,
     typeAhead = true,
@@ -292,7 +375,25 @@ export const useKeyboardList = (
     onUnknownKey,
   } = options;
 
-  const activeItem = ref<HTMLElement>();
+  const parent = options.key
+    ? inject<UseKeyboardList | undefined>(options.key, undefined)
+    : undefined;
+
+  const currentActiveItem = ref<HTMLElement | undefined>();
+
+  const activeItem = computed({
+    get() {
+      return parent ? parent.activeItem.value : currentActiveItem.value;
+    },
+
+    set(value) {
+      if (parent) {
+        parent.activeItem.value = value;
+      } else {
+        currentActiveItem.value = value;
+      }
+    },
+  });
 
   const search = ref("");
 
@@ -305,13 +406,32 @@ export const useKeyboardList = (
     },
   });
 
-  watch(activeItem, () => refocus());
+  watch(currentActiveItem, () => refocus());
 
   const findRelativeElementInList = (by: "next" | "previous") => {
+    if (options.key) {
+      return findRelativeElementFromQuery(
+        by,
+        selector,
+        unref(list),
+        activeItem.value,
+        options.filter
+      );
+    }
+
     return findRelativeElement(by, activeItem.value, options.filter);
   };
 
   const findEdgeElementInList = (by: "first" | "last") => {
+    if (options.key) {
+      return findEdgeElementFromQuery(
+        by,
+        selector,
+        unref(list),
+        options.filter
+      );
+    }
+
     return findEdgeElement(by, unref(list), options.filter);
   };
 
@@ -412,7 +532,11 @@ export const useKeyboardList = (
 
     const isRepeating = isRepeatingCharacter(search.value, character);
 
-    const matches = Array.from(unref(list)?.children ?? [])
+    const items = options.key
+      ? unref(list)?.querySelectorAll(selector) ?? []
+      : unref(list)?.children ?? [];
+
+    const matches = Array.from(items)
       .filter((element): element is HTMLElement => isHtmlElement(element))
       .filter(element => {
         const text = element.textContent?.trim().toLowerCase();
@@ -475,7 +599,7 @@ export const useKeyboardList = (
     }
   });
 
-  return {
+  const result: UseKeyboardList = {
     activeItem,
 
     navigate,
@@ -498,8 +622,6 @@ export const useKeyboardList = (
         }
 
         if (typeAhead && isPrintableCharacter(event.key)) {
-          // event.preventDefault();
-
           return type(event.key);
         }
       }
@@ -535,4 +657,10 @@ export const useKeyboardList = (
       }
     },
   };
+
+  if (options.key) {
+    provide(options.key, result);
+  }
+
+  return result;
 };

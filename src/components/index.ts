@@ -10,6 +10,7 @@ export * from "./tabs";
 export * from "./toast";
 export * from "./toggletip";
 export * from "./tooltip";
+export * from "./tree";
 
 export {
   default as PeachyVisuallyHidden,
