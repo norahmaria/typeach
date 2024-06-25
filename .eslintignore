@@ -11,3 +11,4 @@ dist
 
 # Tests
 cypress/screenshots
+cypress/downloads

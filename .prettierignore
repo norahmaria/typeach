@@ -9,6 +9,6 @@ logs
 node_modules
 dist
 
-
 # Tests
 cypress/screenshots
+cypress/downloads

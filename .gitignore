@@ -17,3 +17,4 @@ docs/.vitepress/dist
 
 # Tests
 cypress/screenshots
+cypress/downloads
