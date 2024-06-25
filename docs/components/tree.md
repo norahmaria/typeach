@@ -121,7 +121,7 @@ export type TreeRole = "tree" | "group";
 
 ## Accessibility
 
-Resources: [APG File Directory Treeview Example Using Declared Properties](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/examples/treeview1b/)
+Resources: [APG File Directory Treeview Example Using Declared Properties](https://www.w3.org/WAI/ARIA/apg/patterns/treeview/examples/treeview1b/), [React Accessible Treeview](https://github.com/dgreene1/react-accessible-treeview)
 
 ### Keyboard interactions
 
