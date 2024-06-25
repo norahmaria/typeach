@@ -260,6 +260,11 @@ dayjs.locale(nb);
 
 ## Creating a range date picker
 
+::: warning DISABLED DATES
+Being able to disable dates is right around the corner, in which case a lot of this will change drastically.
+Consider this archived until then.
+:::
+
 <ClientOnly>
   <ComponentPreview>
     <DateRangePicker />
