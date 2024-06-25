@@ -74,7 +74,7 @@
   border-radius: var(--border-radius);
 }
 
-.peachy-tree__item[aria-expanded]:focus > .peachy-tree__item-label {
+.peachy-tree__item:focus > .peachy-tree__item-label {
   background-color: var(--button-bg) !important;
 }
 
