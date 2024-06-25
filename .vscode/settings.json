@@ -11,7 +11,9 @@
     "describeby",
     "menuitemradio",
     "menuitemcheckbox",
-    "toggletip"
+    "toggletip",
+    "treeitem",
+    "setsize"
   ],
 
   "cSpell.words": [
