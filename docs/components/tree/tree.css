@@ -130,7 +130,6 @@
 
 @media (prefers-reduced-motion: no-preference) {
   .tree-loading-icon {
-    background-color:;
     transform-origin: center;
     animation: Spin 1.25s linear infinite;
   }
