@@ -1,6 +1,7 @@
 <template>
   <ul
     ref="element"
+    :class="treeClass('tree')"
     :aria-multiselectable="multiSelect"
     :role="!parentTree ? 'tree' : 'group'"
     @focusin="tree.onFocusIn"
@@ -12,7 +13,7 @@
 <script lang="ts" setup>
   import { computed, inject, provide, ref, toRef } from "vue";
 
-  import { useTree } from "@/hooks/useTree";
+  import { useTree, usePeachyClasses } from "@/hooks";
   import { TreeContextKey } from "./context";
 
   export interface TreeProps {
@@ -23,6 +24,8 @@
   const props = withDefaults(defineProps<TreeProps>(), {
     multiSelect: false,
   });
+
+  const { treeClass } = usePeachyClasses("tree");
 
   const countRef = toRef(props, "count");
 

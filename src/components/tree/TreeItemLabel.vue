@@ -1,5 +1,5 @@
 <template>
-  <span @pointerenter="onPointerEnter">
+  <span :class="itemLabelClass()" @pointerenter="onPointerEnter">
     <slot />
   </span>
 </template>
@@ -7,7 +7,11 @@
 <script lang="ts" setup>
   import { inject } from "vue";
 
+  import { usePeachyClasses } from "@/hooks";
+
   import { TreeContextKey, TreeItemContextKey } from "./context";
+
+  const { itemLabelClass } = usePeachyClasses("tree", ["itemLabel"]);
 
   const tree = inject(TreeContextKey);
 

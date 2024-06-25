@@ -2,6 +2,7 @@
   <!-- eslint-disable-next-line vuejs-accessibility/click-events-have-key-events vuejs-accessibility/interactive-supports-focus -->
   <li
     :id="id"
+    :class="itemClass()"
     :aria-selected="selected"
     :aria-expanded="!$slots.children ? undefined : isOpen"
     :aria-setsize="unref(tree?.count)"
@@ -19,6 +20,8 @@
 <script lang="ts" setup>
   import { computed, inject, provide, toRef, unref } from "vue";
 
+  import { usePeachyClasses } from "@/hooks";
+
   import { TreeContextKey, TreeItemContextKey } from "./context";
 
   export interface TreeItemProps {
@@ -32,6 +35,8 @@
   const emit = defineEmits<{
     toggle: [];
   }>();
+
+  const { itemClass } = usePeachyClasses("tree", ["item"]);
 
   const tree = inject(TreeContextKey);
 
