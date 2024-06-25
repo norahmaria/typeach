@@ -62,7 +62,6 @@
 
 .peachy-tree__item:focus > .peachy-tree__item-label {
   background-color: var(--button-bg);
-  /* outline: 3px solid var(--brand-color); */
 }
 
 .peachy-tree__item
