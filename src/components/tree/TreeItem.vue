@@ -8,6 +8,7 @@
     :aria-setsize="unref(tree?.count)"
     :aria-posinset="position"
     :aria-level="unref(tree?.level)"
+    :aria-disabled="disabled"
     :tabindex="tabIndex"
     role="treeitem"
     @click="onClick">
@@ -28,9 +29,12 @@
     id: string;
     selected: boolean;
     position: number;
+    disabled?: boolean;
   }
 
-  const props = defineProps<TreeItemProps>();
+  const props = withDefaults(defineProps<TreeItemProps>(), {
+    disabled: false,
+  });
 
   const emit = defineEmits<{
     toggle: [];
@@ -81,7 +85,7 @@
   const onClick = (event: MouseEvent) => {
     const shouldToggle = tree?.tree.onItemClick(event, props.id);
 
-    if (shouldToggle) {
+    if (shouldToggle && !props.disabled) {
       emit("toggle");
     }
   };
@@ -91,7 +95,9 @@
     selected: toRef(props, "selected"),
 
     toggle() {
-      emit("toggle");
+      if (!props.disabled) {
+        emit("toggle");
+      }
     },
   });
 </script>

@@ -28,6 +28,7 @@
             id="project-1"
             :position="1"
             :selected="selection.includes('project-1')"
+            disabled
             @toggle="() => selected.toggleItem('project-1')">
             <DocumentSvg aria-hidden="true" />
 

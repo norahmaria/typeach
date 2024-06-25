@@ -3,7 +3,7 @@
 }
 
 .peachy-tree__tree[role="tree"] {
-  width: 16rem;
+  width: 17rem;
   margin-left: -2rem;
 }
 
@@ -28,9 +28,23 @@
   content: none;
 }
 
+.peachy-tree__item[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.peachy-tree__item[aria-disabled="true"] .peachy-tree__item-indicator {
+  opacity: 0.8;
+  cursor: not-allowed;
+}
+
+.peachy-tree__item:not([aria-expanded]) {
+  cursor: default;
+}
+
 .peachy-tree__item {
   cursor: pointer;
-  padding-left: 0.25rem;
+  padding-left: 0.5rem;
   list-style: none;
   display: grid;
   gap: var(--gap);
@@ -60,8 +74,12 @@
   border-radius: var(--border-radius);
 }
 
-.peachy-tree__item:focus > .peachy-tree__item-label {
+.peachy-tree__item[aria-expanded]:focus > .peachy-tree__item-label {
   background-color: var(--button-bg) !important;
+}
+
+.peachy-tree__item[aria-expanded] > .peachy-tree__item-label {
+  font-weight: var(--fw-bold);
 }
 
 .peachy-tree__item > .peachy-tree__tree:has(> .peachy-tree__item:focus) {
