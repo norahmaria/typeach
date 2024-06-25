@@ -14,3 +14,6 @@ node_modules
 # Docs
 docs/.vitepress/cache
 docs/.vitepress/dist
+
+# Tests
+cypress/screenshots

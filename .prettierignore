@@ -8,3 +8,7 @@ logs
 .DS_Store
 node_modules
 dist
+
+
+# Tests
+cypress/screenshots
