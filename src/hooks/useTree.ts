@@ -50,16 +50,14 @@ export const useTree = (
     onBackArrow(element, navigate, event) {
       const parent = element?.parentElement;
 
-      if (parent?.parentElement?.hasAttribute("aria-expanded")) {
-        navigate(parent.parentElement);
-      }
-
-      if (element?.hasAttribute("aria-expanded")) {
+      if (element?.getAttribute("aria-expanded") === "true") {
         const id = element?.getAttribute("id");
 
         if (id) {
           openSelection.updateItem(id, "deselect");
         }
+      } else if (parent?.parentElement?.hasAttribute("aria-expanded")) {
+        navigate(parent.parentElement);
       }
     },
 
