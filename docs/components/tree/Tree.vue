@@ -1,5 +1,4 @@
 <!-- #region snippet -->
-
 <template>
   <PeachyTree.Tree :count="3">
     <PeachyTree.Item
@@ -11,8 +10,8 @@
 
       <PeachyTree.ItemIndicator
         :data-indeterminate="indeterminate('project', selection)">
-        <template v-if="indeterminate('project', selection)">-</template>
-        <CheckboxSvg v-else />
+        <CheckboxSvg v-if="selection.includes('project')" />
+        <template v-else-if="indeterminate('project', selection)">-</template>
       </PeachyTree.ItemIndicator>
 
       <PeachyTree.ItemLabel class="tree-branch-title">
@@ -24,7 +23,7 @@
       </PeachyTree.ItemLabel>
 
       <template #children>
-        <PeachyTree.Tree :count="3">
+        <PeachyTree.Tree :count="2">
           <PeachyTree.Item
             id="project-1"
             :position="1"
@@ -50,10 +49,10 @@
 
             <PeachyTree.ItemIndicator
               :data-indeterminate="indeterminate('project-2', selection)">
-              <template v-if="indeterminate('project-2', selection)">
+              <CheckboxSvg v-if="selection.includes('project-2')" />
+              <template v-else-if="indeterminate('project-2', selection)">
                 -
               </template>
-              <CheckboxSvg v-else />
             </PeachyTree.ItemIndicator>
 
             <PeachyTree.ItemLabel class="tree-branch-title">
@@ -114,8 +113,8 @@
 
       <PeachyTree.ItemIndicator
         :data-indeterminate="indeterminate('letters', selection)">
-        <template v-if="indeterminate('letters', selection)">-</template>
-        <CheckboxSvg v-else />
+        <CheckboxSvg v-if="selection.includes('letters')" />
+        <template v-else-if="indeterminate('letters', selection)">-</template>
       </PeachyTree.ItemIndicator>
 
       <PeachyTree.ItemLabel class="tree-branch-title">

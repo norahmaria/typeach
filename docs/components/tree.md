@@ -11,13 +11,14 @@ the component to know the entire state of the tree.
 
 <script lang="ts" setup>
  import Tree from './tree/Tree.vue'
+ import AsyncTree from './tree/AsyncTree.vue'
  import './tree/tree.css' 
 </script>
 
 <ClientOnly>
-    <ComponentPreview>
-        <Tree />
-    </ComponentPreview>
+  <ComponentPreview>
+    <Tree />
+  </ComponentPreview>
 </ClientOnly>
 
 ::: code-group
@@ -54,6 +55,8 @@ It is recommended to let the user know when a parent has any children selected. 
 
   - For the screen reader text it is preferable to only inform when a child is selected, and not when no children are selected, to avoid repetition.
   - `ItemIndicator` is hidden from screen readers, so placing the information there would be useless.
+
+- The children slot should always be rendered when the item has children - even if they're not loaded yet. And it should not render for a childless item.
 
 ## Props & Emits
 
@@ -133,6 +136,14 @@ Resources: [APG File Directory Treeview Example Using Declared Properties](https
 | <kbd>AZ</kbd> or <kbd>az</kbd> on `Item`      | Loops through items starting with the letter typed, or searches for the first item matching the search. Without opening/closing any items. |
 | <kbd>\*</kbd>                                 | Opens all items on the same level.                                                                                                         |
 
-## Loading items asynchronously
+## Asynchronous
 
-Example coming soon!
+<br />
+
+<ClientOnly>
+  <ComponentPreview>
+    <AsyncTree />
+  </ComponentPreview>
+</ClientOnly>
+
+<<< tree/AsyncTree.vue#snippet{8-13,24-27,36}

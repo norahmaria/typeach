@@ -61,11 +61,10 @@
 }
 
 .peachy-tree__item:focus > .peachy-tree__item-label {
-  background-color: var(--button-bg);
+  background-color: var(--button-bg) !important;
 }
 
-.peachy-tree__item
-  > .peachy-tree__tree:has(> .peachy-tree__item[data-active="true"]) {
+.peachy-tree__item > .peachy-tree__tree:has(> .peachy-tree__item:focus) {
   border-left-color: var(--text);
 }
 
@@ -109,4 +108,27 @@
 .peachy-tree__item-indicator[aria-pressed="true"] {
   background-color: var(--brand-button-bg);
   color: var(--brand-button-text);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tree-loading-icon {
+    background-color:;
+    transform-origin: center;
+    animation: Spin 1.25s linear infinite;
+  }
+}
+
+@keyframes Spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.tree-unload-button {
+  position: absolute;
+
+  bottom: 1rem;
+  right: 1rem;
+
+  border-radius: 4px !important;
 }

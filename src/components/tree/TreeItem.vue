@@ -18,7 +18,7 @@
 </template>
 
 <script lang="ts" setup>
-  import { computed, inject, provide, toRef, unref } from "vue";
+  import { computed, inject, provide, toRef, unref, watch } from "vue";
 
   import { usePeachyClasses } from "@/hooks";
 
@@ -34,6 +34,7 @@
 
   const emit = defineEmits<{
     toggle: [];
+    open: [];
   }>();
 
   const { itemClass } = usePeachyClasses("tree", ["item"]);
@@ -52,6 +53,12 @@
     const { openSelection } = tree.tree;
 
     return openSelection.selectedIds.value.includes(idRef.value);
+  });
+
+  watch(isOpen, newIsOpen => {
+    if (newIsOpen) {
+      emit("open");
+    }
   });
 
   const tabIndex = computed(() => {

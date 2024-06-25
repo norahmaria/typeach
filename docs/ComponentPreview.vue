@@ -48,10 +48,12 @@
     padding: 2.5em;
     border-radius: 8px;
     background: var(--vp-sidebar-bg-color);
+    position: relative;
   }
 
   .component-preview
-    > button:not(.peachy-switch__input):not(.peachy-select__trigger) {
+    > button:not(.peachy-switch__input):not(.peachy-select__trigger),
+  .component-preview .tree-unload-button {
     border: none;
     border-radius: 10rem;
 
@@ -76,6 +78,8 @@
       opacity 0.25s;
   }
 
+  .component-preview .tree-unload-button:hover,
+  .component-preview .tree-unload-button:focus,
   .component-preview
     > button:hover:not(.peachy-switch__input:not(.peachy-select__trigger)),
   .component-preview
