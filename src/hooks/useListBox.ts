@@ -379,6 +379,7 @@ export const useListBox = (
 
       const selectedChildren = children
         .filter((child): child is HTMLElement => isHtmlElement(child))
+        .filter(child => options.filter?.(child) ?? true)
         .filter(child => child.getAttribute("aria-selected") === "true")
         .sort((a, b) => children.indexOf(a) - children.indexOf(b));
 
