@@ -16,7 +16,7 @@ it("Renders with accessible attributes", () => {
   ["Project 1", "Project 2", "Project 3", "Project 4"].forEach((title, i) => {
     cy.contains(title).parent().shouldHaveRole("treeitem").shouldHaveArias({
       setsize: 4,
-      level: 1,
+      level: 2,
     });
   });
 });

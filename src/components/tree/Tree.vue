@@ -38,6 +38,6 @@
   provide(TreeContextKey, {
     tree,
     count: countRef,
-    level: computed(() => parentTree?.level.value ?? 0 + 1),
+    level: computed(() => (parentTree?.level.value ?? 0) + 1),
   });
 </script>
