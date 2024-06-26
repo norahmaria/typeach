@@ -4,10 +4,11 @@
     <PeachyInput.GroupLabel>Select a range</PeachyInput.GroupLabel>
 
     <div class="date-range-picker-wrapper">
-      <DatePickerWrapper
+      <DatePickerForRange
         v-model:date="startDate"
         :end-date="endDate"
         :start-date="startDate"
+        is-for="start"
         label="Start date"
         description="Pick a start date."
         @update:date="startDate = $event" />
@@ -16,10 +17,11 @@
         <LongArrowSvg aria-hidden class="arrow" />
       </div>
 
-      <DatePickerWrapper
+      <DatePickerForRange
         v-model:date="endDate"
         :end-date="endDate"
         :start-date="startDate"
+        is-for="end"
         label="End date"
         description="Pick an end date." />
     </div>
@@ -28,34 +30,15 @@
 <!-- #endregion snippet -->
 
 <script lang="ts" setup>
-  import { watch, ref } from "vue";
+  import { ref } from "vue";
 
   import { PeachyInput, type DayJs } from "@/index";
 
-  import DatePickerWrapper from "./DatePickerForRange.vue";
+  import DatePickerForRange from "./DatePickerForRange.vue";
 
   import LongArrowSvg from "./LongArrowSvg.vue";
 
   const startDate = ref<DayJs>();
+
   const endDate = ref<DayJs>();
-
-  watch(startDate, newStartDate => {
-    if (!endDate.value || !newStartDate) {
-      return;
-    }
-
-    if (newStartDate.isAfter(endDate.value)) {
-      endDate.value = undefined;
-    }
-  });
-
-  watch(endDate, newEndDate => {
-    if (!startDate.value || !newEndDate) {
-      return;
-    }
-
-    if (newEndDate.isBefore(startDate.value)) {
-      startDate.value = undefined;
-    }
-  });
 </script>

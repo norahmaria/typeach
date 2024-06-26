@@ -142,6 +142,7 @@ The `date` here refers to the focused date, not necessarily the selected date. T
 | -------- | :-----: | :--------: | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | date     |         |  `DayJs`   |                                                                                                                                                                            |
 | selected |         | `boolean?` | The calendar will deal with this for you - but if you're doing a [range date picker](#creating-a-range-date-picker) this can be used to mark additional dates as selected. |
+| disabled |         | `boolean?` |                                                                                                                                                                            |
 
 #### Emits
 
@@ -260,11 +261,6 @@ dayjs.locale(nb);
 
 ## Creating a range date picker
 
-::: warning DISABLED DATES
-Being able to disable dates is right around the corner, in which case a lot of this will change drastically.
-Consider this archived until then.
-:::
-
 <ClientOnly>
   <ComponentPreview>
     <DateRangePicker />
@@ -277,16 +273,21 @@ Consider this archived until then.
 
 :::
 
-### Making your `<DatePickerWrapper />` work with ranges
+### Making `<DatePickerForRange />`
 
-_The `DatePickerWrapper` component above is a placeholder name for whatever you name your date picker wrapper, and not a component from this library._
+_The `DatePickerForRange` component above is a placeholder name for whatever you name your date picker wrapper for working with ranges, and not a component from the library._
 
-Inside the wrapper we have some key elements to make it work with a range:
+The component has some key elements to help us out:
 
-- a `v-model` for the selected date for the date picker - `date` (to help the parent range picker [avoid invalid selections](#avoid-invalid-selections)).
+- a `is-for` prop to set this as "start" or "end" date picker
+- a `v-model` for the date
 - a `startDate` prop and an `endDate` prop
 
-And inside our date picker, we set our days to selected or not in the template using the `selected` prop, and for styling purposes we provide a `data-edge` attribute.
+Inside our date picker for a range, we set our days to selected or not in the template using the `selected` prop, and we disable days depending on the `isFor` prop.
+
+::: info ENSURING ATTRIBUTES STAY UP TO DATE
+We're explicitly passing `startDate` and `endDate` to the functions, rather than accessing `props.startDate` and `props.endDate` _inside_ them - **this is to ensure they update when either of the values change.**
+:::
 
 ```vue{8,9}
 <template>
@@ -296,18 +297,40 @@ And inside our date picker, we set our days to selected or not in the template u
     v-for="day in weeks[parseInt(week)]"
     :key="day.get('date')"
     :date="day"
-    :date-edge="isStartOrEndDate(day, startDate, endDate)"
-    :selected="isSelected(day, startDate, endDate)">
-    {{ day.format("D") }}
+    :selected="isSelected(day, startDate, endDate)"
+    :disabled="isFor === 'start' ? isAfter(day, endDate) : isBefore(day, startDate)">
+    <span aria-hidden="true">
+      {{ day.format("D") }}
+    </span>
+
+    <PeachyVisuallyHidden>
+      {{ day.format("D MMM YYYY") }}
+    </PeachyVisuallyHidden>
   </PeachyDatePicker.Day>
 
   <!-- ... -->
 </template>
 ```
 
-We're explicitly passing `startDate` and `endDate` to the functions, rather than accessing `props.startDate` and `props.endDate` _inside_ the them - **this is to ensure they update when either of the values change.**
+And here are the functions used.
 
 ```ts
+const isBefore = (date: DayJs, startDate?: DayJs) => {
+  if (!startDate) {
+    return false;
+  }
+
+  return date.isBefore(startDate);
+};
+
+const isAfter = (date: DayJs, endDate?: DayJs) => {
+  if (!endDate) {
+    return false;
+  }
+
+  return date.isAfter(endDate);
+};
+
 const isStartOrEndDate = (
   date: DayJs,
   startDate: DayJs | undefined,
@@ -338,39 +361,39 @@ const isSelected = (
 };
 ```
 
-### Avoid invalid selections
+### Invalid dates selected
 
-In your date range picker component, you can avoid invalid selections with some simple watchers. _For other validations outside this, use the [`<PeachyInput />`](/components/input) erroring system._
+Above we've made sure the calendar dropdown doesn't allow selecting an invalid date by disabling them. However, this does nothing to prevent the user from entering an invalid date in either of the text input.
+
+For that case, you should provide error messages as with any other [`<Input />`](/components/input). We trigger the validation on the date picker's `Input` event `@validate` - but also whenever start or end date changes.
 
 ```ts
-const startDate = ref<DayJs>();
-const endDate = ref<DayJs>();
+const validationError = ref<string | undefined>();
 
-/**
- * If `startDate` changes to after the end date,
- * we clear the end date.
- */
-watch(startDate, newStartDate => {
-  if (!endDate.value || !newStartDate) {
+const validate = (date?: DayJs) => {
+  if (!date) {
+    validationError.value = undefined;
     return;
   }
 
-  if (newStartDate.isAfter(endDate.value)) {
-    endDate.value = undefined;
+  if (props.isFor === "start" && isAfter(date, props.endDate)) {
+    validationError.value = "Can not be after end date.";
+  } else if (props.isFor === "end" && isBefore(date, props.startDate)) {
+    validationError.value = "Can not be before start date.";
+  } else {
+    validationError.value = undefined;
+  }
+};
+
+watch(toRef(props, "startDate"), () => {
+  if (props.isFor === "end") {
+    validate(dateRef.value);
   }
 });
 
-/**
- * If `endDate` changes to before the start date,
- * we clear the start date.
- */
-watch(endDate, newEndDate => {
-  if (!startDate.value || !newEndDate) {
-    return;
-  }
-
-  if (newEndDate.isBefore(startDate.value)) {
-    startDate.value = undefined;
+watch(toRef(props, "endDate"), () => {
+  if (props.isFor === "start") {
+    validate(dateRef.value);
   }
 });
 ```

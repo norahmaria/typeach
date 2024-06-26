@@ -13,24 +13,60 @@
   justify-content: center;
 }
 
-.date-range-picker-wrapper .peachy-input {
-  grid-template-columns: auto max-content;
+.date-range-picker-wrapper .peachy-input.date {
+  grid-template-columns: auto min-content;
+  grid-template-areas: "error error" "input button";
+}
+
+.peachy-date-picker__input {
+  grid-area: input;
+}
+
+.peachy-dialog__trigger.date-picker-button {
+  grid-area: button;
 }
 
 .date-range-arrow-wrapper {
   display: grid;
-  place-content: center;
+  place-content: end;
   flex-grow: 1;
 }
 
 .date-range-picker-wrapper .arrow {
-  padding-top: 0.5rem;
+  margin-bottom: 0.5rem;
   height: var(--icon-size);
   width: var(--icon-size);
 }
 
-.peachy-date-picker__day[aria-pressed="true"][data-edge="false"] {
-  opacity: 0.75;
+.date-range-picker-wrapper .peachy-input__error {
+  grid-area: error;
+  font-size: 90%;
+  opacity: 0.9;
+}
+
+.peachy-date-picker__day[aria-disabled="true"] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.peachy-date-picker__day[aria-disabled="true"][aria-pressed="true"] {
+  background-color: var(--error-color);
+}
+
+.peachy-date-picker__input[aria-invalid="true"] {
+  caret-color: var(--error-color);
+  border-color: var(--error-color);
+}
+
+.peachy-date-picker__input[aria-invalid="true"]:not(:disabled):hover {
+  border-color: var(--error-color);
+}
+
+.peachy-date-picker__input[aria-invalid="true"]:focus,
+.peachy-date-picker__input[aria-invalid="true"]
+  .peachy-date-picker__input:focus-visible {
+  outline: none !important;
+  border-color: var(--error-color);
 }
 
 @media only screen and (max-width: 45rem) {
@@ -42,7 +78,12 @@
     width: 15rem;
   }
 
+  .date-range-arrow-wrapper {
+    place-content: start;
+  }
+
   .arrow {
+    margin-top: 1rem;
     transform-origin: center;
     transform: rotate(90deg);
   }

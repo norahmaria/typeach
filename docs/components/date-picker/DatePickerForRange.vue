@@ -4,7 +4,8 @@
     <PeachyDatePicker.Input
       v-bind="$attrs"
       v-model:date="selectedDate"
-      placeholder="M/D/YYYY">
+      placeholder="M/D/YYYY"
+      @validate="validate">
       <template #before>
         <PeachyVisuallyHidden>
           <PeachyInput.Label>{{ label }}</PeachyInput.Label>
@@ -80,11 +81,13 @@
                         {{ week }}
                       </PeachyDatePicker.WeekNumber>
 
+                      <!-- prettier-ignore -->
                       <PeachyDatePicker.Day
                         v-for="day in weeks[parseInt(week)]"
                         :key="day.get('date')"
                         :date="day"
-                        :selected="isSelected(day, startDate, endDate)">
+                        :selected="isSelected(day, startDate, endDate)"
+                        :disabled="isFor === 'start' ? isAfter(day, endDate) : isBefore(day, startDate)">
                         <span aria-hidden="true">
                           {{ day.format("D") }}
                         </span>
@@ -100,6 +103,10 @@
             </PeachyDialog.Target>
           </Teleport>
         </PeachyDialog.Dialog>
+
+        <PeachyInput.Error v-if="validationError">
+          {{ validationError }}
+        </PeachyInput.Error>
       </template>
     </PeachyDatePicker.Input>
   </PeachyInput.Input>
@@ -122,6 +129,7 @@
   import CalendarSvg from "./CalendarSvg.vue";
 
   export interface DatePickerForRangeProps {
+    isFor: "start" | "end";
     date?: DayJs | undefined;
     label: string;
     description: string;
@@ -135,6 +143,8 @@
     "update:date": [date: DayJs | undefined];
   }>();
 
+  const dateRef = toRef(props, "date");
+
   const selectedDate = ref<DayJs>();
 
   const focusedDate = ref(dayJs());
@@ -143,13 +153,58 @@
     return string.charAt(0).toUpperCase() + string.slice(1);
   }
 
-  watchImmediate(toRef(props, "date"), newDate => {
+  watchImmediate(dateRef, newDate => {
     selectedDate.value = newDate;
   });
 
   watch(selectedDate, newSelectedDate => {
     emit("update:date", newSelectedDate);
   });
+
+  const validationError = ref<string | undefined>();
+
+  const validate = (date?: DayJs) => {
+    if (!date) {
+      validationError.value = undefined;
+      return;
+    }
+
+    if (props.isFor === "start" && isAfter(date, props.endDate)) {
+      validationError.value = "Can not be after end date.";
+    } else if (props.isFor === "end" && isBefore(date, props.startDate)) {
+      validationError.value = "Can not be before start date.";
+    } else {
+      validationError.value = undefined;
+    }
+  };
+
+  watch(toRef(props, "startDate"), () => {
+    if (props.isFor === "end") {
+      validate(dateRef.value);
+    }
+  });
+
+  watch(toRef(props, "endDate"), () => {
+    if (props.isFor === "start") {
+      validate(dateRef.value);
+    }
+  });
+
+  const isBefore = (date: DayJs, startDate?: DayJs) => {
+    if (!startDate) {
+      return false;
+    }
+
+    return date.isBefore(startDate);
+  };
+
+  const isAfter = (date: DayJs, endDate?: DayJs) => {
+    if (!endDate) {
+      return false;
+    }
+
+    return date.isAfter(endDate);
+  };
 
   const isStartOrEndDate = (
     date: DayJs,
