@@ -14,6 +14,7 @@
       :data-active="isActive"
       :tabindex="isActive ? 0 : -1"
       :aria-pressed="selected || isSelected"
+      :aria-disabled="disabled"
       :aria-current="selected || isSelected ? 'date' : undefined"
       :autofocus="isActive"
       type="button"
@@ -46,9 +47,13 @@
      * can be used to mark additional dates as selected.
      */
     selected?: boolean;
+
+    disabled?: boolean;
   }
 
-  const props = defineProps<CalendarDayProps>();
+  const props = withDefaults(defineProps<CalendarDayProps>(), {
+    disabled: false,
+  });
 
   const { cellClass, dayClass } = usePeachyClasses("datePicker", [
     "cell",
@@ -97,7 +102,7 @@
   };
 
   const onClick = () => {
-    if (isWithinMonth.value) {
+    if (isWithinMonth.value && !props.disabled) {
       calendar?.setSelected(dateRef.value);
     }
   };
