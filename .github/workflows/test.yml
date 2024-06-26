@@ -6,7 +6,7 @@ on:
     paths:
       - ".github/workflows/test.yml"
       - "cypress"
-      - "src"
+      - "src/**"
       - "cypress.config.js"
       - "env.d.ts"
       - "package-lock.json"
