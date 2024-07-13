@@ -25,7 +25,7 @@ There's a great article on this by Sarah Higley - [`<select> your poison`](https
 
 ## Anatomy
 
-Radio does use `<PeachyInput.Label />`, not be be confused with it's own `Label` component, which is used as a label inside the list of options.
+Select does use `<PeachyInput.Label />`, not be be confused with it's own `Label` component, which is used as a label inside the list of options.
 
 ```vue
 <template>
