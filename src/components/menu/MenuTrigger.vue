@@ -18,7 +18,8 @@
 <script lang="ts" setup>
   import { ref, inject } from "vue";
 
-  import { usePeachyClasses, isHtmlElement } from "@/hooks";
+  import { usePeachyClasses } from "@/hooks";
+  import { isHtmlElement } from "@/hooks/utils";
 
   import { PeachyPopover, type PopoverExpose } from "../popover";
   import { MenuContextKey } from "./context";

@@ -13,7 +13,8 @@ import {
   type UseSelectionIdArray,
 } from "./useSelectionIdArray";
 
-import { isHtmlElement, useKeyboardList } from "./useKeyboardList";
+import { useKeyboardList } from "./useKeyboardList";
+import { isHtmlElement } from "./utils";
 
 export const TreeKeyboardListKey = Symbol("tree");
 

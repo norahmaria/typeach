@@ -5,14 +5,14 @@
 <script lang="ts" setup>
   import { ref, inject, provide, readonly, toRef, watch } from "vue";
 
-  import { isHtmlElement } from "@/hooks";
-
   import {
     PopoverContextKey,
     PopoverRootTargetKey,
-    type PopoverExpose,
     hidePopoverWithThrottle,
+    type PopoverExpose,
   } from "./context";
+
+  import { isHtmlElement } from "@/hooks/utils";
 
   export interface PopoverProps {
     /**

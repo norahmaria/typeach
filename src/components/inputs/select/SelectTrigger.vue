@@ -17,11 +17,9 @@
   import { ref, inject, toRef, unref } from "vue";
   import { watchImmediate } from "@vueuse/core";
 
-  import {
-    createRandomId,
-    isPrintableCharacter,
-    usePeachyClasses,
-  } from "@/hooks";
+  import { createRandomId, usePeachyClasses } from "@/hooks";
+
+  import { isPrintableCharacter } from "@/hooks/utils";
 
   import { PeachyPopover, type PopoverExpose } from "@/components/popover";
 

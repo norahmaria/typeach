@@ -9,8 +9,7 @@ import {
 } from "vue";
 
 import { useThrottleFn, watchImmediate } from "@vueuse/core";
-
-import { isHtmlElement } from "./useKeyboardList";
+import { isHtmlElement } from "./utils";
 
 export interface InputContext {
   id: DeepReadonly<Ref<string>>;

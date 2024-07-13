@@ -2,12 +2,12 @@ import { ref, unref, type Ref } from "vue";
 
 import {
   useKeyboardList,
-  isHtmlElement,
-  findEdgeElement,
   type UseKeyboardListOptions,
   type UseKeyboardList,
   type NavigateFunction,
 } from "./useKeyboardList";
+
+import { findEdgeElement, isHtmlElement } from "./utils";
 
 export type UpdateItemFunction = (
   id: string,

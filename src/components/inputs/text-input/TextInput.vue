@@ -30,12 +30,9 @@
 <script lang="ts" setup>
   import { ref, watch, toRef } from "vue";
 
-  import {
-    createRandomId,
-    isHtmlElement,
-    usePeachyClasses,
-    useInput,
-  } from "@/hooks";
+  import { createRandomId, usePeachyClasses, useInput } from "@/hooks";
+
+  import { isHtmlElement } from "@/hooks/utils";
 
   import { isTextInput } from "../utils";
 
