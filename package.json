@@ -16,7 +16,7 @@
     "url": "https://github.com/norahmaria/typeach.git"
   },
   "license": "MIT",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "type": "module",
   "main": "./dist/typeach.umd.js",
   "module": "./dist/typeach.es.js",

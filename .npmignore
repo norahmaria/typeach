@@ -15,8 +15,12 @@ logs
 .github
 .vscode
 
-# Misc
+# Docs
 docs
+
+# Tests
+__tests__
 cypress.config.js
 cypress
 *.test.vue
+*.cy.ts

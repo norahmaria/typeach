@@ -1,6 +1,6 @@
 import NativePopover from "./NativePopover.test.vue";
 import NonNativePopover from "./NonNativePopover.test.vue";
-import NativePopoverWithIs from "./NativePopoverWithIs.test..vue";
+import NativePopoverWithIs from "./NativePopoverWithIs.test.vue";
 import NonNativePopoverWithIs from "./NonNativePopoverWithIs.test.vue";
 
 it("Can relate trigger to target", () => {
