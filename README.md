@@ -5,7 +5,7 @@
 
 With `npm i typeach` you can install yet another unstyled component library for [Vue](https://vuejs.org) **focused on accessibility**.
 
-Please read the [documentation](https://norahmaria.github.io/typeach/info), and feel free to open an [issue](https://github.com/norahmaria/typeach/issues) if you encounter any problems or spot anything weird.
+Please read the [documentation](https://norahmaria.github.io/typeach/), and feel free to open an [issue](https://github.com/norahmaria/typeach/issues/new/choose) if you encounter any problems or spot anything weird.
 
 ## Running typeach locally
 
