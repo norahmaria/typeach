@@ -1,0 +1,25 @@
+name: "🐞 Bug"
+description: "Report a bug"
+labels: ["bug"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for submitting a bug report 🧡"
+
+  - type: textarea
+    id: "steps-to-reproduce"
+    attributes:
+      label: "Steps to reproduce"
+      description: How can the issue be reproduced? Clear and concise explanations are super appreciated! Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
+      placeholder: "Steps to reproduce"
+    validations:
+      required: true
+
+  - type: textarea
+    id: "description"
+    attributes:
+      label: "Description"
+      description: |
+        Describe the bug - what did you expect to happen, and what actually happened? Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
+    validations:
+      required: true

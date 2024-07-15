@@ -1,0 +1,54 @@
+name: "🐞 Accessibility"
+description: "Report an accessibility issue to help us improve"
+labels: ["accessibility"]
+body:
+  - type: markdown
+    attributes:
+      value: "Thank you for submitting an accessibility issue 🧡"
+
+  - type: dropdown
+    id: "os"
+    attributes:
+      label: "What OS are you experiencing this issue on"
+      multiple: true
+      options:
+        - "Windows"
+        - "Mac"
+
+  - type: dropdown
+    id: "browsers"
+    attributes:
+      label: "What browsers are you seeing the problem in?"
+      multiple: true
+      options:
+        - "Chrome"
+        - "Safari"
+        - "Firefox"
+
+  - type: dropdown
+    id: "screen-readers"
+    attributes:
+      label: "What screen reader (if relevant) is this issue happening in?"
+      multiple: true
+      options:
+        - "VoiceOver"
+        - "NVDA"
+        - "JAWS"
+
+  - type: textarea
+    id: "steps-to-reproduce"
+    attributes:
+      label: "Steps to reproduce"
+      description: How can the issue be reproduced? Clear and concise explanations are super appreciated! Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
+      placeholder: "Steps to reproduce"
+    validations:
+      required: true
+
+  - type: textarea
+    id: "description"
+    attributes:
+      label: "Description"
+      description: |
+        Describe the bug - what did you expect to happen, and what actually happened? Note that you can use [Markdown](https://guides.github.com/features/mastering-markdown/) to format lists and code.
+    validations:
+      required: true
