@@ -7,7 +7,7 @@ import {
   type NavigateFunction,
 } from "./useKeyboardList";
 
-import { findEdgeElement, isHtmlElement } from "./utils";
+import { findEdgeElement, forElementsBetween, isHtmlElement } from "./utils";
 
 export type UpdateItemFunction = (
   id: string,
@@ -128,46 +128,6 @@ export interface UseListBox extends UseKeyboardList {
    */
   onItemPointerEnter: (event: PointerEvent) => void;
 }
-
-const forElementsBetween = (
-  parent: HTMLElement,
-  options: {
-    start: HTMLElement;
-    end: HTMLElement;
-    callback: (element: HTMLElement) => void;
-  }
-) => {
-  const { start, end, callback } = options;
-
-  const children = Array.from(parent.children);
-
-  const startIsBeforeEnd = children.indexOf(start) < children.indexOf(end);
-
-  let element: HTMLElement | Element | null = startIsBeforeEnd
-    ? start.nextElementSibling
-    : end.nextElementSibling;
-
-  if (startIsBeforeEnd) {
-    callback(start);
-  } else {
-    callback(end);
-  }
-
-  while (element && !element.isSameNode(startIsBeforeEnd ? end : start)) {
-    if (!isHtmlElement(element)) {
-      break;
-    }
-
-    callback(element);
-    element = element.nextElementSibling;
-  }
-
-  if (startIsBeforeEnd) {
-    callback(end);
-  } else {
-    callback(start);
-  }
-};
 
 export const useListBox = (
   list: Ref<HTMLElement | undefined | null> | HTMLElement | undefined | null,
