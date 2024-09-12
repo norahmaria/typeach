@@ -21,6 +21,3 @@ export interface TabsListContext {
 }
 
 export const TabsContextKey: InjectionKey<TabsContext> = Symbol("peachy-tabs");
-
-export const TabsListContextKey: InjectionKey<TabsListContext> =
-  Symbol("peachy-tabs-list");

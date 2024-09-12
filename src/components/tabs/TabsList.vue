@@ -14,11 +14,11 @@
 </template>
 
 <script lang="ts" setup>
-  import { inject, provide, nextTick, ref, unref } from "vue";
+  import { inject, nextTick, ref, unref } from "vue";
 
   import { useKeyboardList, usePeachyClasses } from "@/hooks";
 
-  import { TabsContextKey, TabsListContextKey } from "./context";
+  import { TabsContextKey } from "./context";
 
   export interface TabsListProps {
     /**
@@ -40,14 +40,10 @@
   const tablist = ref<HTMLDivElement>();
 
   /* prettier-ignore */
-  const { onKeyDown, onFocusIn, onItemPointerEnter } = useKeyboardList(tablist, {
+  const { onKeyDown, onFocusIn } = useKeyboardList(tablist, {
     orientation: props.orientation,
     typeAhead: false,
     loop: true,
-  });
-
-  provide(TabsListContextKey, {
-    onItemPointerEnter,
   });
 
   const onFocus = async () => {

@@ -9,8 +9,7 @@
     role="tab"
     tabindex="-1"
     @click="onClick"
-    @focus="onFocus"
-    @pointerenter="onPointerEnter">
+    @focus="onFocus">
     <slot />
   </button>
 </template>
@@ -20,7 +19,7 @@
 
   import { usePeachyClasses } from "@/hooks";
 
-  import { TabsContextKey, TabsListContextKey } from "./context";
+  import { TabsContextKey } from "./context";
 
   const tabsContext = inject(TabsContextKey);
 
@@ -32,19 +31,9 @@
 
   const { listItemClass } = usePeachyClasses("tabs", ["listItem"]);
 
-  const tabsList = inject(TabsListContextKey);
-
   onMounted(() => {
     tabsContext?.addTab(props.id);
   });
-
-  const onPointerEnter = (event: PointerEvent) => {
-    tabsList?.onItemPointerEnter(event);
-
-    if (tabsContext?.followFocus.value) {
-      openPanel();
-    }
-  };
 
   const openPanel = () => {
     if (tabsContext) {
