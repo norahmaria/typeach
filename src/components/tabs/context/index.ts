@@ -16,8 +16,4 @@ export interface TabsContext {
   setTitleId(id: string): void;
 }
 
-export interface TabsListContext {
-  onItemPointerEnter(event: PointerEvent): void;
-}
-
 export const TabsContextKey: InjectionKey<TabsContext> = Symbol("peachy-tabs");
