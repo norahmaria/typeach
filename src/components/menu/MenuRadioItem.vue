@@ -2,6 +2,7 @@
   <InternalMenuItem
     :class="[itemClass(), radioItemClass()]"
     :aria-checked="unref(group?.value) === value"
+    :disabled="disabled"
     role="menuitemradio"
     @click="group?.onRadioClick(value as T)">
     <slot />
@@ -18,6 +19,7 @@
   import { MenuRadioGroupContextKey } from "./context";
 
   export interface MenuRadioItemProps<V> {
+    disabled?: boolean;
     value: V;
   }
 

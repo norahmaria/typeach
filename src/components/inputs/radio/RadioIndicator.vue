@@ -17,5 +17,12 @@
 
   const { indicatorClass } = usePeachyClasses("radio", ["indicator"]);
 
+  defineSlots<{
+    /**
+     * Only renders when the radio is selected.
+     */
+    default(): any;
+  }>();
+
   const radio = inject(RadioContextKey);
 </script>

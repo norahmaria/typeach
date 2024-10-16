@@ -1,0 +1,144 @@
+/** ===== Popup ===== */
+
+.peachy-dialog__target {
+  margin: auto;
+  border: none;
+
+  position: relative;
+
+  background: var(--background-color);
+  border-radius: var(--border-radius);
+
+  padding: 2.5rem;
+  min-width: min(18rem, 95dvw);
+
+  font-size: 1rem;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.peachy-dialog__target[open]::backdrop {
+  background-color: rgba(0, 0, 0, 0.35);
+}
+
+/* ===== Button ===== */
+
+.peachy-dialog__trigger {
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.peachy-dialog__trigger:hover {
+  background: var(--text-color);
+  color: var(--background-color);
+  border-color: var(--text-color);
+}
+
+.peachy-dialog__trigger:focus-visible {
+  outline: 2px solid var(--focus-color);
+}
+
+.peachy-dialog__trigger:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+
+  background-color: var(--border-color);
+}
+
+/** ===== Content ===== */
+
+.peachy-dialog__title {
+  margin: 0;
+  font-size: 2.5rem;
+  font-weight: var(--font-weight-bold);
+}
+
+.peachy-dialog__description {
+  font-size: 1.125rem;
+  margin-block-start: 0.5em;
+  margin-block-end: 1em;
+}
+
+/** ===== Close button ===== */
+
+.peachy-dialog__close {
+  background: none;
+  border: none;
+
+  position: absolute;
+
+  right: 1rem;
+  top: 1rem;
+
+  display: grid;
+  place-content: center;
+  padding: 0.25em;
+  aspect-ratio: 1;
+
+  font-size: 1rem;
+
+  border-radius: 100%;
+}
+
+.peachy-dialog__close:hover {
+  background-color: var(--border-color);
+}
+
+.peachy-dialog__close:focus-visible {
+  outline: 2px solid var(--focus-color);
+}
+
+/* ===== Transitions ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-dialog__trigger,
+  .peachy-dialog__close {
+    transition:
+      border-color var(--transition),
+      background var(--transition),
+      color var(--transition);
+  }
+
+  .peachy-dialog__close svg {
+    transition: inherit;
+  }
+
+  .peachy-dialog__target[open] {
+    animation: ScaleIn 0.25s;
+  }
+
+  .peachy-dialog__target[open]::backdrop {
+    animation: FadeIn 0.25s;
+  }
+
+  @keyframes ScaleIn {
+    from {
+      transform: scale(0.75);
+    }
+
+    to {
+      opacity: scale(1);
+    }
+  }
+
+  @keyframes FadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+}

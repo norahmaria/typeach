@@ -1,0 +1,1 @@
+- [Meter Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/meter/) by [APG](https://www.w3.org/WAI/ARIA/apg)

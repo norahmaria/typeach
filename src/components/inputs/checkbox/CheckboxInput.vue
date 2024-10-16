@@ -17,7 +17,6 @@
     :data-readonly="readOnly || readOnlyByChildren"
     :aria-required="required"
     type="checkbox"
-    style="appearance: none"
     @click.prevent="onClick" />
 
   <slot name="after" />
@@ -50,37 +49,51 @@
   } from "./context";
 
   export interface CheckboxProps {
+    /**
+     * A parent will also become disabled if
+     * any of it's children are disabled.
+     */
     disabled?: boolean;
+
+    /**
+     * Should only be used for non-parent checkboxes.
+     */
     state?: CheckboxState;
+
+    /**
+     * A parent will also become readonly if any
+     * of it's children are readonly/disabled.
+     */
     readOnly?: boolean;
+
+    /**
+     * The component only labels it as required with
+     * `aria-required` and does not deal with any error messages for you.
+     */
     required?: boolean;
+
     id?: string;
   }
 
   const props = withDefaults(defineProps<CheckboxProps>(), {
     id: () => createRandomId(),
-
     required: false,
-
-    /**
-     * _A parent will also become disabled if any of it's children are disabled._
-     */
     disabled: false,
-
-    /**
-     * Should only be used for non-parent checkboxes.
-     */
     state: false,
-
-    /**
-     * _A parent will also become readonly if any of it's children are readonly/disabled._
-     */
     readOnly: false,
   });
 
   const emit = defineEmits<{
     "update:state": [state: CheckboxState];
+
+    /**
+     * Only triggers if part of an Input.
+     */
     validate: [state: CheckboxState];
+
+    /**
+     * Only triggers if part of an Input.
+     */
     "clear-validation": [];
   }>();
 

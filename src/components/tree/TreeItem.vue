@@ -28,7 +28,16 @@
   export interface TreeItemProps {
     id: string;
     selected: boolean;
+
+    /**
+     * The position of the item in the list.
+     */
     position: number;
+
+    /**
+     * Will prevent `toggle` from emitting,
+     * but still allows for opening item.
+     */
     disabled?: boolean;
   }
 
@@ -37,8 +46,20 @@
   });
 
   const emit = defineEmits<{
+    /**
+     *  Triggered when the selection for the item should toggle.
+     */
     toggle: [];
+
+    /**
+     *  Triggered when opened.
+     */
     open: [];
+  }>();
+
+  defineSlots<{
+    default(): any;
+    children(): any;
   }>();
 
   const { itemClass } = usePeachyClasses("tree", ["item"]);

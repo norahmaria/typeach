@@ -1,0 +1,256 @@
+/* ===== Input Layout ===== */
+
+.peachy-input.date {
+  display: grid;
+  width: 15rem;
+  grid-template-columns: fit-content max-content;
+  grid-template-areas: "label label" "input button";
+  gap: 0.5rem;
+}
+
+.peachy-input.date .peachy-input__label {
+  grid-area: label;
+}
+
+.date-picker-button {
+  grid-area: button;
+}
+
+.peachy-date-picker__input {
+  grid-area: input;
+}
+
+.peachy-input__label {
+  font-size: 1.125rem;
+}
+
+/* ===== Text input ===== */
+
+.peachy-date-picker__input {
+  font: inherit;
+  color: inherit;
+
+  border-radius: 0.15rem;
+  padding: 0.5rem;
+
+  background-color: var(--background-color);
+  border: 1px solid var(--border-color);
+
+  min-width: 0;
+}
+
+.peachy-date-picker__input:not(:disabled):hover {
+  border-color: var(--text-color);
+}
+
+.peachy-date-picker__input:focus-visible {
+  border-color: var(--text-color);
+  outline: 2px solid var(--focus-color);
+}
+
+/* ===== Button ===== */
+
+.peachy-input.date {
+  .peachy-dialog__trigger {
+    cursor: pointer;
+    padding: 0.5em;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5em;
+
+    background: var(--background-color);
+    color: var(--text-color);
+    font-size: 0.8rem;
+
+    aspect-ratio: 1;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+  }
+
+  .peachy-dialog__trigger:hover {
+    background: var(--text-color);
+    color: var(--background-color);
+    border-color: var(--text-color);
+  }
+
+  .peachy-dialog__trigger:focus-visible {
+    outline: 2px solid var(--focus-color);
+  }
+
+  .peachy-dialog__trigger:disabled {
+    opacity: 0.6;
+    pointer-events: none;
+
+    background-color: var(--border-color);
+  }
+}
+
+/* ===== Dialog ===== */
+
+.peachy-input.date {
+  .peachy-dialog__target {
+    margin: 0;
+    border: none;
+
+    position: relative;
+
+    background: var(--background-color);
+    border-radius: var(--border-radius);
+
+    padding: 1.5rem;
+    min-width: min(18rem, 95dvw);
+
+    font-size: 1rem;
+
+    box-shadow:
+      rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+      rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+      rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+  }
+
+  .peachy-dialog__target[open]::backdrop {
+    display: none;
+  }
+}
+
+/* ===== Calendar meta ===== */
+
+.date-picker-navigation-wrapper {
+  display: grid;
+  grid-template-columns: max-content 1fr max-content;
+  align-items: center;
+
+  button {
+    background: none;
+    border: none;
+
+    height: 2rem;
+    aspect-ratio: 1;
+    border-radius: 100%;
+
+    display: grid;
+    place-content: center;
+  }
+
+  button:hover {
+    background-color: var(--border-color);
+  }
+}
+
+.peachy-date-picker__title {
+  margin: 0;
+  width: 100%;
+
+  text-align: center;
+  font-weight: var(--font-weight-bold);
+  font-size: 1.25rem;
+  line-height: 1;
+}
+
+/* ===== Calendar Grid ===== */
+
+.peachy-date-picker__table {
+  width: 100%;
+  overflow: visible;
+
+  * {
+    all: revert;
+  }
+
+  .peachy-date-picker__description {
+    font-size: 1rem;
+    text-align: left;
+    padding: 0.5em;
+    margin: 0.75rem 0 0.75rem 0;
+
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+  }
+
+  .peachy-date-picker__headings {
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .peachy-date-picker__heading {
+    font-size: 100%;
+    font-weight: var(--font-weight-bold);
+  }
+
+  .peachy-date-picker__heading {
+    padding: 0.25rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .peachy-date-picker__week:first-of-type .peachy-date-picker__cell {
+    padding-top: 0.5rem;
+  }
+
+  .peachy-date-picker__week-number {
+    padding-right: 1rem;
+  }
+
+  .peachy-date-picker__cell {
+    padding: 0.25rem;
+  }
+
+  .peachy-date-picker__day {
+    border: none;
+    cursor: pointer;
+
+    width: 2rem;
+    aspect-ratio: 1;
+
+    font-size: 1rem;
+    color: var(--text-color);
+
+    border-radius: calc(var(--border-radius) / 2);
+    background-color: var(--border-color);
+  }
+
+  .peachy-date-picker__day[aria-pressed="true"] {
+    background-color: var(--text-color);
+    color: var(--background-color);
+  }
+
+  .peachy-date-picker__day[data-active="true"] {
+    transform: scale(1.25);
+    outline: 2px solid var(--focus-color);
+  }
+
+  .peachy-date-picker__day:focus-visible:not([aria-pressed="true"]),
+  .peachy-date-picker__day:hover:not([aria-pressed="true"]) {
+    background-color: var(--background-color);
+  }
+}
+
+/* ===== Transitions ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-input.date .peachy-dialog__trigger {
+    transition:
+      border-color var(--transition),
+      background var(--transition),
+      color var(--transition);
+  }
+
+  .peachy-input.date .peachy-dialog__trigger svg {
+    transition: inherit;
+  }
+
+  .peachy-date-picker__input {
+    transition: border-color var(--transition);
+  }
+
+  .peachy-date-picker__table {
+    .peachy-date-picker__day {
+      transition:
+        transform var(--transition),
+        background-color var(--transition),
+        color var(--transition),
+        filter var(--transition);
+    }
+  }
+}

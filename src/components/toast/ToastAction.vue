@@ -12,6 +12,11 @@
   import { usePeachyClasses } from "@/hooks";
 
   export interface ToastActionProps {
+    /**
+     * A description describing an alternative route
+     * for performing this action if they are
+     * not able to reach the toast in time.
+     */
     descriptiveText: string;
   }
 

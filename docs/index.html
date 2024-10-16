@@ -1,0 +1,70 @@
+<!doctype html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Typeach 🍑</title>
+  </head>
+
+  <body>
+    <div id="app"></div>
+
+    <script type="module">
+      import "@/components/menu/__docs__/menu.css";
+      import "@/components/tabs/__docs__/tabs.css";
+
+      import "@docs/public/styles/index.css";
+
+      import "highlight.js/lib/common";
+      import hljsVuePlugin from "@highlightjs/vue-plugin";
+
+      import unicon from "vue-unicons";
+
+      import {
+        uniTimes,
+        uniAngleRight,
+        uniAngleDown,
+        uniAngleLeft,
+        uniAngleUp,
+        uniEllipsisH,
+        uniFileBlank,
+        uniCheck,
+        uniSchedule,
+        uniExclamationTriangle,
+        uniGithub,
+      } from "vue-unicons/dist/icons";
+
+      unicon.add([
+        uniTimes,
+        uniAngleRight,
+        uniAngleDown,
+        uniAngleLeft,
+        uniAngleUp,
+        uniEllipsisH,
+        uniFileBlank,
+        uniCheck,
+        uniSchedule,
+        uniExclamationTriangle,
+        uniGithub,
+      ]);
+
+      import { createApp } from "vue";
+
+      import { router } from "@docs/routes/router";
+
+      import App from "@docs/App.vue";
+      import Tabs from "@docs/components/Tabs.vue";
+      import Link from "@docs/components/Link.vue";
+
+      createApp(App)
+        .use(router)
+        .use(hljsVuePlugin)
+        .use(unicon, { fill: "currentColor" })
+        .component("TabsComponent", Tabs)
+        .component("Link", Link)
+        .mount("#app");
+    </script>
+  </body>
+</html>

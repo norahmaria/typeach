@@ -5,6 +5,7 @@
     :class="[!menu?.isRoot ? [itemClass(), subTriggerClass()] : triggerClass()]"
     :role="!menu?.isRoot ? 'menuitem' : undefined"
     :action="menu?.isRoot ? 'toggle' : 'show'"
+    :disabled="disabled"
     :aria-disabled="disabled"
     aria-haspopup="menu"
     @click="onClick"
@@ -31,10 +32,6 @@
   const props = withDefaults(defineProps<MenuTriggerProps>(), {
     disabled: false,
   });
-
-  const emit = defineEmits<{
-    click: [];
-  }>();
 
   const { triggerClass, itemClass, subTriggerClass } = usePeachyClasses(
     "menu",
@@ -65,7 +62,7 @@
   };
 
   const onClick = (event?: MouseEvent) => {
-    if (!menu) {
+    if (!menu || props.disabled) {
       return;
     }
 

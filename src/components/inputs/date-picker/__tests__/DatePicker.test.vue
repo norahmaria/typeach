@@ -1,4 +1,3 @@
-<!-- #region snippet -->
 <template>
   <PeachyInput.Input class="date">
     <PeachyDatePicker.Input
@@ -81,7 +80,6 @@
     </PeachyDatePicker.Input>
   </PeachyInput.Input>
 </template>
-<!-- #endregion snippet -->
 
 <script lang="ts" setup>
   import { ref } from "vue";

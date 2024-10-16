@@ -22,23 +22,23 @@
   import { ToastContextKey } from "./context";
 
   export interface ToastProps {
+    /**
+     * The `is` attribute for the [dynamic root component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components).
+     */
     is?: string;
 
     /**
-     * The aria-live attribute for the toast.
+     * The [aria-live attribute](https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Attributes/aria-live) for the toast.
      */
     assertive?: boolean;
 
     /**
      * Whether the toast is open or not.
-     * @default false
      */
     open?: boolean;
 
     /**
-     * Close automatically after x milliseconds.
-     *
-     * @default undefined
+     * Close automatically after `x` milliseconds.
      */
     closeAfter?: number;
   }

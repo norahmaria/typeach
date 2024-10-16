@@ -1,0 +1,36 @@
+.peachy-input__description {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.peachy-input__label {
+  font-size: 1.125rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.peachy-input__label :is(.unicon, svg) {
+  height: 1em;
+  aspect-ratio: 1;
+  color: hsl(0, 85%, 49%);
+}
+
+.peachy-input__error {
+  margin: 0;
+  padding: 0;
+  margin-top: 0rem;
+  font-size: 85%;
+  width: 100%;
+}
+
+.peachy-text-input__input[aria-invalid="true"],
+.peachy-text-input__input[aria-invalid="true"]:not(:disabled):hover {
+  border-color: hsl(0, 85%, 49%);
+}
+
+.peachy-text-input__input[aria-invalid="true"]:focus-visible,
+.peachy-text-input__input[aria-invalid="true"]
+  .peachy-text-input__input:focus-visible {
+  border-color: hsl(0, 85%, 49%);
+}

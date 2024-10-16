@@ -14,7 +14,7 @@
 
   import { TabsContextKey } from "./context";
 
-  import HierarchyTitle from "../HierarchyTitle.vue";
+  import HierarchyTitle from "../hierarchy-title/HierarchyTitle.vue";
 
   export interface TabsTitleProps {
     id?: string;

@@ -41,6 +41,11 @@
     value?: string;
     textarea?: boolean;
     placeholder: string;
+
+    /**
+     * The component only labels it as required with
+     * `aria-required` and does not deal with any error messages for you.
+     */
     required?: boolean;
   }
 
@@ -51,8 +56,16 @@
   });
 
   const emit = defineEmits<{
-    "clear-validation": [];
     "update:value": [value: string];
+
+    /**
+     * Only triggers if part of an Input.
+     */
+    "clear-validation": [];
+
+    /**
+     * Only triggers if part of an Input.
+     */
     validate: [value: string];
   }>();
 

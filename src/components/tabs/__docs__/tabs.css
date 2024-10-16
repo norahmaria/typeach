@@ -1,0 +1,62 @@
+:root {
+  --tabs-background-color: hsl(0, 0%, 96%);
+}
+
+/* ===== List ===== */
+
+.peachy-tabs__list {
+  display: flex;
+  gap: 0.25em;
+}
+
+.peachy-tabs__list-item {
+  cursor: pointer;
+
+  padding-inline: 1em;
+  padding-block: 0.75em;
+
+  font-weight: 500;
+  font-size: 1rem;
+
+  border: none;
+  background: var(--background-color);
+  border-radius: var(--border-radius) var(--border-radius) 0 0;
+
+  transition: filter var(--transition);
+}
+
+.peachy-tabs__list-item[aria-selected="true"] {
+  background-color: var(--tabs-background-color);
+}
+
+.peachy-tabs__list-item:hover {
+  filter: brightness(92%);
+}
+
+.peachy-tabs__list-item:focus-visible {
+  outline: 2px solid var(--focus-color);
+  z-index: 2;
+}
+
+/* ===== Panel ===== */
+
+.peachy-tabs__panel {
+  min-width: min(18rem, 95dvw);
+  padding: 1.5em;
+
+  background-color: var(--tabs-background-color);
+  border-radius: var(--border-radius);
+}
+
+.peachy-tabs__panel:focus-visible {
+  outline: 2px solid var(--focus-color);
+}
+
+/* ===== Content ===== */
+
+h2.peachy-tabs__title {
+  margin: 0;
+  margin-block-end: 1em;
+
+  font-size: 2rem;
+}

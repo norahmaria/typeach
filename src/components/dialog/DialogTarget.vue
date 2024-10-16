@@ -27,22 +27,27 @@
 
   import { DialogContextKey, updateDialog } from "./context";
 
-  import HierarchyTitle from "../HierarchyTitle.vue";
+  import HierarchyTitle from "../hierarchy-title/HierarchyTitle.vue";
 
   export interface DialogTargetProps {
     id?: string;
+
+    /**
+     * If set to `false` - there's actually [no way to
+     * close the dialog unless you provide it](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/dialog#:~:text=It%20is%20important%20to%20provide%20a%20closing%20mechanism%20within%20every%20dialog%20element.%20The%20Esc%20key%20does%20not%20close%20non%2Dmodal%20dialogs%20by%20default%2C%20nor%20can%20one%20assume%20that%20a%20user%20will%20even%20have%20access%20to%20a%20physical%20keyboard%20(e.g.%2C%20someone%20using%20a%20touch%20screen%20device%20without%20access%20to%20a%20keyboard).).
+     */
     modal?: boolean;
 
     /**
-     * The preferred placement for Floating UI.
-     *
-     * @default "bottom"
-     * @see https://floating-ui.com/docs/tutorial#placements
+     * The [placement option](https://floating-ui.com/docs/tutorial#placements)
+     * for [Floating UI](https://floating-ui.com).
      */
     placement?: Placement;
 
     /**
-     * If `modal` is false, this requires the dialog's `::backdrop` to have a display of none to work.
+     * If `modal` is `false` - the dialog's `::backdrop`
+     * need to have a display of none to trigger
+     * outside clicks.
      */
     closeOnOutsideClick?: boolean;
   }

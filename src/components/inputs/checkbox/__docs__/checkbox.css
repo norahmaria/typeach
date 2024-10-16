@@ -1,0 +1,76 @@
+.peachy-input__label {
+  cursor: pointer;
+  font-size: 1.125rem;
+}
+
+.peachy-input.checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+  position: relative;
+
+  cursor: pointer;
+}
+
+.peachy-checkbox__input {
+  appearance: none;
+}
+
+.peachy-checkbox__input,
+.peachy-checkbox__indicator {
+  width: 1.5em;
+  height: 1.5em;
+  border-radius: 2px;
+  margin: 0;
+}
+
+.peachy-checkbox__input {
+  background-color: var(--border-color);
+  transition: background-color 0.25s;
+}
+
+.peachy-checkbox__input:checked {
+  background-color: var(--text-color);
+}
+
+.peachy-checkbox__indicator {
+  position: absolute;
+  display: grid;
+  place-content: center;
+
+  top: 0;
+  left: 0;
+
+  color: var(--background-color);
+}
+
+.peachy-checkbox__input:focus-visible {
+  outline: none;
+}
+
+.peachy-checkbox__input:focus-visible + .peachy-checkbox__indicator {
+  outline: 2px solid var(--focus-color);
+}
+
+.peachy-input.checkbox:has(.peachy-checkbox__input:disabled) {
+  cursor: default;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+/* ===== Transitions ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-checkbox__indicator svg {
+    animation: ScaleIn 0.25s;
+  }
+
+  @keyframes ScaleIn {
+    from {
+      transform: scale(0.6);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}

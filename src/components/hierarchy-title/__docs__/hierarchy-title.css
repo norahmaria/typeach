@@ -1,0 +1,41 @@
+h2.peachy-hierarchy-title,
+h3.peachy-hierarchy-title,
+h4.peachy-hierarchy-title,
+h5.peachy-hierarchy-title,
+h6.peachy-hierarchy-title {
+  text-align: center;
+  margin-block-start: 1.25em;
+  margin-block-end: 0;
+}
+
+h2.peachy-hierarchy-title:first-of-type {
+  margin-block-start: 0;
+}
+
+h2.peachy-hierarchy-title {
+  font-size: 2.5rem;
+}
+
+h3.peachy-hierarchy-title {
+  font-size: 1.7rem;
+}
+
+h4.peachy-hierarchy-title {
+  font-size: 1.4rem;
+}
+
+h5.peachy-hierarchy-title {
+  font-size: 1.1rem;
+}
+
+h6.peachy-hierarchy-title {
+  font-size: 1rem;
+}
+
+h2.peachy-hierarchy-title,
+h3.peachy-hierarchy-title,
+h4.peachy-hierarchy-title,
+h5.peachy-hierarchy-title,
+h6.peachy-hierarchy-title {
+  font-weight: var(--font-weight-bold);
+}

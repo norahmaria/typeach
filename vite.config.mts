@@ -6,6 +6,8 @@ import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import dts from "vite-plugin-dts";
 
+const source = fileURLToPath(new URL("./src", import.meta.url));
+
 export default defineConfig({
   plugins: [
     vue(),
@@ -14,7 +16,7 @@ export default defineConfig({
 
   resolve: {
     alias: {
-      "@": fileURLToPath(new URL("./src", import.meta.url)),
+      "@": source,
     },
   },
 

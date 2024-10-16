@@ -36,7 +36,15 @@
 
   const emit = defineEmits<{
     "update:selected": [value: string];
+
+    /**
+     * Only triggers if part of an Input.
+     */
     validate: [value: string];
+
+    /**
+     * Only triggers if part of an Input.
+     */
     "clear-validation": [];
   }>();
 

@@ -1,0 +1,116 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+:target {
+  scroll-margin-block: 3em;
+}
+
+html {
+  -moz-text-size-adjust: none;
+  -webkit-text-size-adjust: none;
+  text-size-adjust: none;
+}
+
+body {
+  min-height: 100vh;
+}
+
+a,
+button,
+input,
+textarea,
+select {
+  font: inherit;
+  color: inherit;
+}
+
+a,
+button,
+label {
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+input,
+label,
+button,
+kbd,
+code {
+  line-height: 1;
+}
+
+a,
+li,
+p {
+  line-height: 1.6;
+  font-size: 1.125rem;
+  text-wrap: pretty;
+  text-underline-position: from-font;
+}
+
+kbd {
+  white-space: nowrap;
+}
+
+code {
+  font-weight: inherit;
+}
+
+ul,
+ol {
+  margin-inline: 1.25em;
+}
+
+h1,
+h2,
+h3,
+h5,
+h6,
+strong {
+  font-weight: 600;
+}
+
+pre,
+img,
+picture,
+video,
+canvas,
+svg {
+  max-width: 100%;
+  display: block;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms;
+    animation-iteration-count: 1;
+    transition-duration: 0.01ms;
+    scroll-behavior: auto;
+  }
+}

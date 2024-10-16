@@ -10,7 +10,6 @@
     :aria-disabled="readOnly || radioGroup?.readOnly"
     :data-readonly="readOnly || radioGroup?.readOnly"
     type="radio"
-    style="appearance: none"
     @click="onClick"
     @change="radioGroup?.setSelected(value)" />
 

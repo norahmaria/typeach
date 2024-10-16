@@ -2,6 +2,7 @@
   <InternalMenuItem
     :class="[itemClass(), checkboxItemClass()]"
     :aria-checked="checked"
+    :disabled="disabled"
     role="menuitemcheckbox"
     @click="$emit('update:checked', !checked)">
     <slot />
@@ -14,6 +15,7 @@
   import InternalMenuItem from "./private/MenuItem.internal.vue";
 
   export interface MenuCheckboxItemProps {
+    disabled?: boolean;
     checked: boolean;
   }
 

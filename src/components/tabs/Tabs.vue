@@ -27,19 +27,18 @@
 
     /**
      * If a tab should automatically open when it's
-     * <Tabs.ListItem /> gains focus.
+     * associated `ListItem` gains focus.
+     *
+     * When `true` the tabs use `v-show` instead of
+     * `v-if` - to preload the content to ensure
+     * a smooth experience quickly shifting through.
      *
      * @default false
      */
     followFocus?: boolean;
 
     /**
-     * If the tabs should loop automatically
-     * acting as a carousel, this value is the
-     * time for each tab to be displayed in milliseconds.
-     *
-     * If set to undefined or 0, it will not loop automatically.
-     *
+     * Activate next tab automatically after `x` milliseconds.
      * @default 0
      */
     interval?: number;

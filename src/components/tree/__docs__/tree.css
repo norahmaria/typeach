@@ -1,0 +1,123 @@
+/** ===== Tree ===== */
+
+.peachy-tree__tree {
+  grid-area: tree;
+}
+
+.tree-branch-title,
+.tree-item-title {
+  grid-area: title;
+}
+
+.peachy-tree__tree[role="tree"] {
+  width: min(16rem, 95dvw);
+}
+
+.peachy-tree__tree[role="group"] {
+  position: relative;
+  padding: 0;
+  margin: 0;
+
+  margin-inline-start: 0.6rem;
+  padding-inline-start: 0.5rem;
+
+  border-inline-start: 1px solid var(--border-color);
+}
+
+.peachy-tree__tree[role="group"] {
+  margin-block-end: 0.5rem;
+}
+
+/* ===== Items ===== */
+
+.peachy-tree__item {
+  cursor: pointer;
+  padding-left: 0.5rem;
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+
+  grid-template-columns: 1.25rem 1fr 1rem;
+  grid-template-areas: "toggle title indicator" "tree tree tree";
+  align-items: center;
+}
+
+.peachy-tree__item-label {
+  width: calc(100% - 1rem);
+  padding: 0.25em 0.5em;
+  border-radius: var(--border-radius);
+}
+
+.peachy-tree__item:focus {
+  outline: none;
+}
+
+.peachy-tree__item:focus > .peachy-tree__item-label {
+  background-color: var(--border-color);
+}
+
+.peachy-tree__item > .peachy-tree__tree:has(> .peachy-tree__item:focus) {
+  border-left-color: var(--text-color);
+}
+
+.peachy-tree__item[aria-disabled="true"] {
+  opacity: 0.6;
+  cursor: default;
+}
+
+.peachy-tree__item:not([aria-expanded]) {
+  cursor: default;
+}
+
+/* ===== Branch ===== */
+
+.peachy-tree__item[aria-expanded] > .peachy-tree__item-label {
+  font-weight: var(--font-weight-bold);
+}
+
+.peachy-tree__item[aria-expanded="true"] > :is(.unicon, svg) {
+  transform-origin: center;
+  transform: rotate(90deg);
+}
+
+/* ===== Checkboxes ===== */
+
+.peachy-tree__item-indicator {
+  grid-area: indicator;
+
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+
+  width: 1em;
+  aspect-ratio: 1;
+
+  border-radius: 4px;
+  font-size: 1.6rem;
+
+  transform: translateX(-0.8rem);
+  color: var(--text-color);
+
+  transition: background-color 0.25s;
+  background-color: var(--border-color);
+  border: none;
+}
+
+.peachy-tree__item-indicator[data-indeterminate="true"] {
+  background-color: hsl(37, 66%, 65%);
+}
+
+.peachy-tree__item-indicator[aria-pressed="true"] {
+  background-color: var(--text-color);
+  color: var(--background-color);
+}
+
+.peachy-tree__item-indicator :is(.unicon, svg) {
+  display: none;
+}
+
+/* prettier-ignore */
+.peachy-tree__item-indicator[data-indeterminate="true"] :is(.unicon, svg),
+.peachy-tree__item[aria-selected="true"] > .peachy-tree__item-indicator :is(.unicon, svg) {
+  display: block;
+}

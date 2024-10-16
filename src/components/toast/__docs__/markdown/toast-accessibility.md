@@ -1,0 +1,1 @@
+- If `closeAfter` is set and a user is interacting with the element - the toast will delay closing until the user is no longer interacting with it (unless the interaction was closing the toast) _or if you manually update the `open` property_.
