@@ -45,6 +45,8 @@ jobs:
       - name: "Build"
         run: pnpm docs:build
 
+      # https://router.vuejs.org/guide/essentials/history-mode#HTML5-Mode
+      # https://docs.github.com/en/pages/getting-started-with-github-pages/creating-a-custom-404-page-for-your-github-pages-site
       - name: "Create 404.html"
         uses: canastro/copy-file-action@master
         with:
