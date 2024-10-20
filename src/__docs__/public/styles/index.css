@@ -166,3 +166,11 @@ mark {
 .note--info {
   --note-color: hsl(196, 40%, 55%);
 }
+
+@media (width <= 30rem) {
+  .components-keyboard-shortcut {
+    position: absolute;
+    display: none;
+    opacity: 0.1;
+  }
+}

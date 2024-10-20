@@ -2,8 +2,14 @@
   <article>
     <section class="introduction">
       <div class="content">
-        <div style="width: fit-content">
-          <h1 style="width: max-content">{{ title }}</h1>
+        <div
+          style="
+            width: fit-content;
+            display: flex;
+            flex-direction: column;
+            gap: 0.25em;
+          ">
+          <h1 style="width: fit-content">{{ title }}</h1>
           <RouterLink v-if="isInput" :to="{ name: 'input' }" class="badge">
             Input
           </RouterLink>
@@ -88,6 +94,7 @@
 
   .badge {
     z-index: 10;
+    width: max-content;
 
     position: absolute;
     top: 50%;
@@ -104,5 +111,12 @@
     padding-inline: 0.4em;
     padding-block: 0.25em;
     border-radius: var(--border-radius);
+  }
+
+  @media (width <= 30rem) {
+    .badge {
+      position: static;
+      transform: none;
+    }
   }
 </style>

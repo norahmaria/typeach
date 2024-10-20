@@ -34,10 +34,12 @@
         aria-label="Components">
         <span style="margin-right: 0.5em">Components</span>
 
-        <kbd v-if="isMac">⌘</kbd>
-        <kbd v-else>CTRL</kbd>
-        +
-        <kbd>K</kbd>
+        <span class="components-keyboard-shortcut">
+          <kbd v-if="isMac">⌘</kbd>
+          <kbd v-else>CTRL</kbd>
+          +
+          <kbd>K</kbd>
+        </span>
       </span>
     </PeachyMenu.Trigger>
 

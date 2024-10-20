@@ -208,6 +208,9 @@
 
     border-radius: calc(var(--border-radius) / 2);
     background-color: var(--border-color);
+
+    display: grid;
+    place-content: center;
   }
 
   .peachy-date-picker__day[aria-pressed="true"] {
