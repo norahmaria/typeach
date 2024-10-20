@@ -45,6 +45,12 @@ jobs:
       - name: "Build"
         run: pnpm docs:build
 
+      - name: "Create 404.html"
+        uses: canastro/copy-file-action@master
+        with:
+          source: "./docs/dist/index.html"
+          target: "./docs/dist/404.html"
+
       - name: "Setup Pages"
         uses: actions/configure-pages@v4
 
