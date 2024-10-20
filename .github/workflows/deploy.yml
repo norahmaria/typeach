@@ -20,12 +20,20 @@ concurrency:
 jobs:
   deploy:
     name: "Deploy"
+    permissions: write-all
     runs-on: ubuntu-latest
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
+      - name: "Clear previous deployments"
+        uses: strumwolf/delete-deployment-environment@v2
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          environment: github-pages
+          onlyRemoveDeployments: true
+
       - name: "Checkout"
         uses: actions/checkout@v4
 
