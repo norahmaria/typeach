@@ -54,9 +54,10 @@
 
 /* ===== Content ===== */
 
-h2.peachy-tabs__title {
+h2.peachy-tabs__title.peachy-hierarchy-title {
   margin: 0;
-  margin-block-end: 1em;
+  margin-block-end: 1.5em;
 
   font-size: 2rem;
+  text-align: left;
 }

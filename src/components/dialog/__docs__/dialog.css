@@ -62,10 +62,11 @@
 
 /** ===== Content ===== */
 
-.peachy-dialog__title {
+h2.peachy-dialog__title.peachy-hierarchy-title {
   margin: 0;
   font-size: 2.5rem;
   font-weight: var(--font-weight-bold);
+  text-align: left;
 }
 
 .peachy-dialog__description {
@@ -118,11 +119,11 @@
     transition: inherit;
   }
 
-  .peachy-dialog__target[open] {
+  .peachy-dialog__target[open]:not(.peachy-input.date *) {
     animation: ScaleIn 0.25s;
   }
 
-  .peachy-dialog__target[open]::backdrop {
+  .peachy-dialog__target[open]:not(.peachy-input.date *)::backdrop {
     animation: FadeIn 0.25s;
   }
 

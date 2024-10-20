@@ -140,7 +140,7 @@
   }
 }
 
-.peachy-date-picker__title {
+h3.peachy-date-picker__title {
   margin: 0;
   width: 100%;
 
@@ -148,6 +148,8 @@
   font-weight: var(--font-weight-bold);
   font-size: 1.25rem;
   line-height: 1;
+
+  margin-block-start: 0;
 }
 
 /* ===== Calendar Grid ===== */
