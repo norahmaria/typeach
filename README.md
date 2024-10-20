@@ -9,15 +9,15 @@ Please read the [documentation](https://norahmaria.github.io/typeach/), and feel
 
 ## Running typeach locally
 
-Install dependencies with `npm i`.
+Install dependencies with `pnpm i`.
 
 ```zsh
 # Run tests
-npm run test
+pnpm run test
 
 # Run documentation
-npm run docs:dev
+pnpm run docs:dev
 
 # Build
-npm run build
+pnpm run build
 ```
