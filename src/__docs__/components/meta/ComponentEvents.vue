@@ -16,6 +16,8 @@
         <td>
           <code v-if="event.type !== '[]'">{{ event.type }}</code>
         </td>
+
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <td v-if="includeDescriptions" v-html="event.description" />
       </tr>
     </tbody>

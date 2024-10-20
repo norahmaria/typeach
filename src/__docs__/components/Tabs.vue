@@ -1,5 +1,5 @@
 <template>
-  <PeachyTabs.Tabs v-model:tab="tab" follow-focus>
+  <PeachyTabs.Tabs v-if="tab" v-model:tab="tab" follow-focus>
     <PeachyTabs.List>
       <PeachyTabs.ListItem v-for="item in items" :key="item.id" :id="item.id">
         {{ item.title }}
@@ -25,7 +25,7 @@
 
   const props = defineProps<TabsProps>();
 
-  const tab = ref<string>(props.items[0]?.id!);
+  const tab = ref<string | undefined>(props.items[0]?.id);
 </script>
 
 <style scoped>

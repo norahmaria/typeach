@@ -118,13 +118,11 @@ describe("Keyboard navigation", () => {
     cy.realPress("L");
     cy.realPress("ArrowRight");
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(500);
 
     cy.realPress("P");
     cy.contains("Projects").parent().should("have.focus");
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(500);
 
     cy.realPress("L");

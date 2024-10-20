@@ -3,9 +3,9 @@
 
   "explorer.fileNesting.patterns": {
     "tsconfig.json": "tsconfig.*.json, env.d.ts",
-    "vite.config.*": "vitest.config.mts, cypress.config.*, .prettierrc.yaml, .eslintrc.yaml",
+    "vite.config.*": "vitest.config.mts, cypress.config.*, .prettierrc.yaml, eslint.config.js",
     "package.json": "package-lock.json, pnpm*",
-    ".gitignore": ".eslintignore, .prettierignore, .npmignore"
+    ".gitignore": ".prettierignore, .npmignore"
   },
 
   "editor.formatOnSave": true,
@@ -24,7 +24,8 @@
     "treeitem",
     "setsize",
     "highlightjs",
-    "unicon"
+    "unicon",
+    "subproject"
   ],
 
   "cSpell.words": [

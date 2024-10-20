@@ -58,8 +58,8 @@
   }>();
 
   defineSlots<{
-    default(): any;
-    children(): any;
+    default(): unknown;
+    children(): unknown;
   }>();
 
   const { itemClass } = usePeachyClasses("tree", ["item"]);

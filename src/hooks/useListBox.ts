@@ -65,6 +65,7 @@ export interface UseListBoxOptions extends PartialKeyboardListOptions {
     navigate: NavigateFunction,
     event: KeyboardEvent,
     updateItem: UpdateItemFunction
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   ) => any | Promise<any>;
 
   /**

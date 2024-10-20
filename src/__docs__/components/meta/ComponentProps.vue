@@ -25,6 +25,7 @@
           </code>
         </td>
 
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <td v-if="includeDescriptions" class="long" v-html="prop.description" />
       </tr>
     </tbody>

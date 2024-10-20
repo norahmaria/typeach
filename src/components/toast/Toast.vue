@@ -78,7 +78,11 @@
     isOpen.value = newOpen;
 
     if (props.closeAfter !== undefined) {
-      newOpen ? startCloseTimeout() : clearTimeout(timeout);
+      if (newOpen) {
+        startCloseTimeout();
+      } else {
+        clearTimeout(timeout);
+      }
     }
   });
 

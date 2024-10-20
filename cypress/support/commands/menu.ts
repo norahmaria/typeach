@@ -1,4 +1,4 @@
-/* eslint-disable-next-line complexity */
+ 
 Cypress.Commands.add("assertMenu", (id, command, item) => {
   switch (command) {
     case "should.be.open":

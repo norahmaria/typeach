@@ -159,11 +159,11 @@ const inputComponentRoutes: RouteRecordRaw[] = [
 
 export const links = componentRoutes
   .filter(r => isValidLinkRouteRecord(r))
-  .map(r => routeRecordToLink(r as any));
+  .map(r => routeRecordToLink(r));
 
 export const inputLinks = inputComponentRoutes
   .filter(r => isValidLinkRouteRecord(r))
-  .map(r => routeRecordToLink(r as any));
+  .map(r => routeRecordToLink(r));
 
 export const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),

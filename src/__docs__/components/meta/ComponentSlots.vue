@@ -12,6 +12,7 @@
     <tbody>
       <tr v-for="slot in meta" :key="slot.name">
         <td>{{ slot.name }}</td>
+        <!-- eslint-disable-next-line vue/no-v-html -->
         <td v-html="slot.description" />
       </tr>
     </tbody>

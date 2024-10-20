@@ -19,6 +19,6 @@ export type MenuRadioGroupContext<T> = {
 
 export const MenuContextKey: InjectionKey<MenuContext> = Symbol("peachy-menu");
 
-export const MenuRadioGroupContextKey: InjectionKey<
-  MenuRadioGroupContext<any>
-> = Symbol("peachy-menu-radio");
+/* prettier-ignore */
+/* eslint-disable-next-line @typescript-eslint/no-explicit-any */
+export const MenuRadioGroupContextKey: InjectionKey<MenuRadioGroupContext<any>> = Symbol("peachy-menu-radio");

@@ -177,11 +177,9 @@ describe("Carousel", () => {
   it("Automatically loops through tabs", () => {
     cy.assertTabs("carousel", "should.have.panel-open", "zero");
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(3500);
     cy.assertTabs("carousel", "should.have.panel-open", "one");
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(3500);
     cy.assertTabs("carousel", "should.have.panel-open", "zero");
   });
@@ -189,19 +187,16 @@ describe("Carousel", () => {
   it("Can pause and resume with <Tabs.IntervalController />", () => {
     cy.assertTabs("carousel", "should.have.panel-open", "zero");
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(3500);
     cy.assertTabs("carousel", "should.have.panel-open", "one");
 
     cy.contains("Pause").click();
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(3500);
     cy.assertTabs("carousel", "should.have.panel-open", "one");
 
     cy.contains("Resume").click();
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(3500);
     cy.assertTabs("carousel", "should.have.panel-open", "zero");
   });
@@ -227,7 +222,6 @@ describe("Carousel", () => {
 
     cy.get("#carousel").realHover();
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(3500);
     cy.assertTabs("carousel", "should.have.panel-open", "zero");
 
@@ -235,7 +229,6 @@ describe("Carousel", () => {
       position: "topLeft",
     });
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(3500);
     cy.assertTabs("carousel", "should.have.panel-open", "one");
   });
@@ -246,13 +239,11 @@ describe("Carousel", () => {
 
       cy.get("#zero").focus();
 
-      /* eslint-disable-next-line cypress/no-unnecessary-waiting */
       cy.wait(3500);
       cy.assertTabs("carousel", "should.have.panel-open", "zero");
 
       cy.get("#outside-button").focus();
 
-      /* eslint-disable-next-line cypress/no-unnecessary-waiting */
       cy.wait(3500);
       cy.assertTabs("carousel", "should.have.panel-open", "one");
     });
@@ -262,21 +253,18 @@ describe("Carousel", () => {
 
       cy.get("#zero").focus();
 
-      /* eslint-disable-next-line cypress/no-unnecessary-waiting */
       cy.wait(3500);
       cy.assertTabs("carousel", "should.have.panel-open", "zero");
 
       cy.get("#zero").realHover();
       cy.getByRole("tablist").focus();
 
-      /* eslint-disable-next-line cypress/no-unnecessary-waiting */
       cy.wait(3500);
       cy.assertTabs("carousel", "should.have.panel-open", "zero");
 
       cy.get("body").realHover({ position: "topLeft" });
       cy.get("#outside-button").focus();
 
-      /* eslint-disable-next-line cypress/no-unnecessary-waiting */
       cy.wait(3500);
       cy.assertTabs("carousel", "should.have.panel-open", "one");
     });

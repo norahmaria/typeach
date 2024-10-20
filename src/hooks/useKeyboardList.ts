@@ -9,6 +9,7 @@ import {
   provide,
   computed,
   type Ref,
+  type InjectionKey,
 } from "vue";
 
 import {
@@ -34,7 +35,7 @@ export type UseKeyboardListOptions = {
    * through direct children, but do a full search,
    * so please provide a `selector` when using.
    */
-  key?: Symbol;
+  key?: InjectionKey<UseKeyboardList>;
 
   /**
    * When a `key` is set, we sometimes do
@@ -152,6 +153,7 @@ export type UseKeyboardListOptions = {
     element: HTMLElement | undefined,
     navigate: NavigateFunction,
     event: KeyboardEvent
+    /* eslint-disable-next-line @typescript-eslint/no-explicit-any */
   ) => any | Promise<any>;
 
   /**
@@ -407,8 +409,8 @@ export const useKeyboardList = (
     const isRepeating = isRepeatingCharacter(search.value, character);
 
     const items = options.key
-      ? unref(list)?.querySelectorAll(selector) ?? []
-      : unref(list)?.children ?? [];
+      ? (unref(list)?.querySelectorAll(selector) ?? [])
+      : (unref(list)?.children ?? []);
 
     const matches = Array.from(items)
       .filter((element): element is HTMLElement => isHtmlElement(element))

@@ -23,12 +23,12 @@
     /**
      * Renders if the checkbox is checked.
      */
-    default(): any;
+    default(): unknown;
 
     /**
      * Renders if the checkbox is indeterminate.
      */
-    indeterminate(): any;
+    indeterminate(): unknown;
   }>();
 
   const { indicatorClass } = usePeachyClasses("checkbox", ["indicator"]);

@@ -233,7 +233,6 @@
     }
 
     /** @see https://github.com/vuejs/vue/issues/9535 */
-    /* eslint-disable-next-line complexity */
     setTimeout(async () => {
       if (lastSetByParent.value) {
         children.value.forEach(child => child.save());

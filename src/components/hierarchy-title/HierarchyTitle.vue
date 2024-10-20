@@ -41,12 +41,12 @@
     /**
      * The content belonging under this title.
      */
-    default(): any;
+    default(): unknown;
 
     /**
      * The actual title.
      */
-    title(): any;
+    title(): unknown;
   }>();
 
   const { hierarchyTitleClass } = usePeachyClasses("hierarchyTitle");

@@ -21,7 +21,7 @@
     /**
      * Only renders when the radio is selected.
      */
-    default(): any;
+    default(): unknown;
   }>();
 
   const radio = inject(RadioContextKey);

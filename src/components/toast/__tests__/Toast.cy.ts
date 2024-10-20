@@ -50,7 +50,6 @@ describe("Can close", () => {
       position: "topLeft",
     });
 
-    /* eslint-disable-next-line cypress/no-unnecessary-waiting */
     cy.wait(16000);
 
     cy.get("@toast").should("not.exist");
@@ -68,7 +67,6 @@ it("Prevents automatic closing when user is interacting with toast", () => {
 
   cy.contains("Remove item").focus();
 
-  /* eslint-disable-next-line cypress/no-unnecessary-waiting */
   cy.wait(20000);
 
   cy.get("@toast").should("be.visible");
