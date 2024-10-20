@@ -82,30 +82,11 @@
     border-radius: var(--border-radius);
   }
 
-  @media (prefers-reduced-motion: reduce) {
-    html:focus-within {
-      scroll-behavior: auto;
-    }
-
-    *,
-    *::before,
-    *::after {
-      animation-duration: 0.01ms !important;
-      animation-iteration-count: 1 !important;
-      transition-duration: 0.01ms !important;
-      scroll-behavior: auto !important;
-    }
-  }
-
   main {
     margin-inline: auto;
     display: grid;
     place-content: center;
     padding-top: 5rem;
     max-width: 60ch;
-  }
-
-  main p {
-    text-wrap: pretty;
   }
 </style>

@@ -29,6 +29,7 @@
 
   const onClick = (event: MouseEvent) => {
     if (props.disabled) {
+      console.log("disabaled");
       return;
     }
 

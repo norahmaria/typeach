@@ -28,8 +28,14 @@
 
   const emit = defineEmits<{
     "update:selected-ids": [ids: string[]];
-    validate: [ids: string[]];
-    "clear-validation": [];
+
+    /**
+     * Only triggers if part of an Input.
+     */ validate: [ids: string[]];
+
+    /**
+     * Only triggers if part of an Input.
+     */ "clear-validation": [];
   }>();
 
   const readonlyRef = toRef(props, "readonly");

@@ -19,6 +19,10 @@
   import { TabsContextKey } from "./context";
 
   export interface TabsPanelProps {
+    /**
+     * **Should match the id of the list item
+     * associated.**
+     */
     id: string;
   }
 

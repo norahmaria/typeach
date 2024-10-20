@@ -1,0 +1,86 @@
+/* ===== Popup ===== */
+
+.peachy-tooltip__target {
+  background: none;
+  border: none;
+  overflow: visible;
+}
+
+.peachy-tooltip__target[data-placement="top"] span {
+  display: block;
+  position: relative;
+
+  background: var(--text-color);
+  color: var(--background-color);
+  border-radius: var(--border-radius);
+
+  margin: 0.75rem;
+  padding: 0.75rem 1.5rem;
+
+  font-size: 1rem;
+
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+.peachy-tooltip__target span::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+
+  transform: translateX(-50%) translateY(100%);
+
+  border-right: solid 0.5rem transparent;
+  border-left: solid 0.5rem transparent;
+  border-top: solid 0.4rem var(--text-color);
+}
+
+/* ===== Button ===== */
+
+.peachy-tooltip__trigger {
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.peachy-tooltip__trigger:hover {
+  background: var(--text-color);
+  color: var(--background-color);
+  border-color: var(--text-color);
+}
+
+.peachy-tooltip__trigger:focus-visible {
+  outline: 2px solid var(--focus-color);
+}
+
+.peachy-tooltip__trigger:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+
+  background-color: var(--border-color);
+}
+
+/* ===== Transitions ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-tooltip__trigger {
+    transition:
+      border-color var(--transition),
+      background var(--transition),
+      color var(--transition);
+  }
+}

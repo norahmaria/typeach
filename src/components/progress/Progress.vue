@@ -21,7 +21,7 @@
   export interface ProgressProps {
     /**
      * The value of the progress indicator,
-     * must be above the min value and below the max value.
+     * must be above the `min` value and below the `max` value.
      */
     value: number;
 

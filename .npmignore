@@ -17,6 +17,8 @@ logs
 
 # Docs
 docs
+__docs__
+*.docs.vue
 
 # Tests
 __tests__

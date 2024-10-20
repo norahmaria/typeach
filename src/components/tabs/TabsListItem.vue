@@ -24,6 +24,13 @@
   const tabsContext = inject(TabsContextKey);
 
   export interface TabsListItemProps {
+    /**
+     * **Should match the id of the panel
+     * associated.**
+     *
+     * This id will be rendered in the dom as
+     * `<id>-list-item`.
+     */
     id: string;
   }
 

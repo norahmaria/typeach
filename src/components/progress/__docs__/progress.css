@@ -1,0 +1,42 @@
+:root {
+  --progress-color: #1a1a1a;
+}
+
+/* ===== Container ===== */
+
+.peachy-progress {
+  position: relative;
+  width: min(14rem, 95dvw);
+  padding-bottom: 1rem;
+}
+
+/* ===== Content ===== */
+
+.peachy-progress__label {
+  margin-block-end: 0.5em;
+  font-size: 1.125rem;
+}
+
+/* ===== Bar ===== */
+
+.peachy-progress::after,
+.peachy-progress::before {
+  content: "";
+  bottom: 0;
+  position: absolute;
+
+  border-radius: 2px;
+  height: 1rem;
+  width: 12rem;
+}
+
+.peachy-progress::before {
+  background-color: var(--border-color);
+}
+
+.peachy-progress::after {
+  background-color: var(--progress-color);
+
+  will-change: max-width;
+  transition: max-width var(--transition);
+}

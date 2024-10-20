@@ -4,6 +4,7 @@
     v-bind="!nonNative && nativeAttributes"
     :is="!nonNative ? 'button' : is"
     :data-open="unref(popover?.isOpen)"
+    :disabled="disabled"
     tabindex="0"
     @click="onClick"
     @focusin="onEntry"
@@ -22,13 +23,13 @@
 
   export interface PopoverTriggerProps {
     /**
+     * The `is` attribute for the [dynamic root component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components).
+     *
      * Will only be applied if `nonNative` is true,
-     * as the popovertarget attribute is only supported
-     * by buttons.
+     * as the [popovertarget attribute](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#popovertarget)
+     * is only supported by buttons.
      *
      * @default "button"
-     * @see https://developer.mozilla.org/en-US/docs/Web/HTML/Element/button#popovertarget
-     * @see https://vuejs.org/api/built-in-special-attributes.html#is
      */
     is?: string;
 
@@ -41,18 +42,18 @@
     nonNative?: boolean;
 
     /**
-     * Sets the popovertargetaction attribute.
-     *
-     * @default "toggle"
-     * @see https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/popoverTargetAction
+     * Sets the [popovertargetaction](https://developer.mozilla.org/en-US/docs/Web/API/HTMLInputElement/popoverTargetAction) attribute.
      */
     action?: "toggle" | "show" | "hide";
+
+    disabled?: boolean;
   }
 
   const props = withDefaults(defineProps<PopoverTriggerProps>(), {
     is: "button",
     nonNative: false,
     action: "toggle",
+    disabled: false,
   });
 
   const actionRef = toRef(props, "action");
@@ -74,6 +75,10 @@
   });
 
   const onClick = (event: MouseEvent) => {
+    if (props.disabled) {
+      return;
+    }
+
     if (popover?.hover.value) {
       event.preventDefault();
     } else if (props.nonNative) {
@@ -82,12 +87,20 @@
   };
 
   const onEntry = () => {
+    if (props.disabled) {
+      return;
+    }
+
     if (popover?.hover.value) {
       popover.target.value?.showPopover();
     }
   };
 
   const onLeave = () => {
+    if (props.disabled) {
+      return;
+    }
+
     if (popover?.hover.value && !popover.target.value?.matches(":hover")) {
       popover.target.value?.hidePopover();
     }

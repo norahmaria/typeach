@@ -14,7 +14,7 @@
 
   import { DatePickerCalendarContextKey } from "../context";
 
-  import HierarchyTitle from "@/components/HierarchyTitle.vue";
+  import HierarchyTitle from "@/components/hierarchy-title/HierarchyTitle.vue";
 
   export interface CalendarTitleProps {
     id?: string;

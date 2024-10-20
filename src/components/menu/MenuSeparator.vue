@@ -12,7 +12,7 @@
 
   export interface MenuSeparatorProps {
     /**
-     * The is attribute for the dynamic root component.
+     * The `is` attribute for the [dynamic root component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components).
      */
     is?: string;
   }

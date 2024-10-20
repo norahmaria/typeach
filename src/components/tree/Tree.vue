@@ -17,7 +17,14 @@
   import { TreeContextKey } from "./context";
 
   export interface TreeProps {
+    /**
+     * Amount of items on this level.
+     */
     count: number;
+
+    /**
+     * Every child inherits the `multiSelect` from the root tree.
+     */
     multiSelect?: boolean;
   }
 

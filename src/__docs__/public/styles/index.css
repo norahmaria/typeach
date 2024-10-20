@@ -1,0 +1,176 @@
+@import "./resets.css" layer(resets);
+@import "./fonts.css" layer(resets);
+
+@import "./table.css" layer(general);
+@import "./code.css" layer(general);
+
+:root {
+  --transition: 0.25s;
+
+  --border-radius: 0.25rem;
+  --font-weight-bold: 600;
+
+  --background-color: #fff;
+  --text-color: #1a1a1a;
+  --border-color: #e1e1e1;
+  --focus-color: #1a1a1a;
+  --mark-color: hsl(38, 82%, 61%);
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+header {
+  z-index: 10;
+  position: fixed;
+  top: 0;
+
+  width: 100%;
+  padding: 0.75em 1.25em;
+
+  display: flex;
+  align-items: center;
+  gap: 1em;
+
+  background: var(--background-color);
+}
+
+header a {
+  text-decoration: none;
+}
+
+main {
+  margin-block: 4rem;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section {
+  width: min(75ch, 95dvw);
+  overflow: hidden;
+  padding: 2rem;
+}
+
+section > * + *,
+section > div > * + * {
+  margin-top: 1em;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-block: 1.25em 0.8em;
+}
+
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 2.5rem;
+}
+
+h3 {
+  font-size: 1.7rem;
+}
+
+h4 {
+  font-size: 1.4rem;
+}
+
+h5 {
+  font-size: 1.1rem;
+}
+
+h6 {
+  font-size: 1rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: var(--font-weight-bold);
+}
+
+h2 > a {
+  font-size: inherit;
+  text-decoration: none;
+}
+
+p + h3 {
+  margin-block-start: 1.5em;
+}
+
+*:not(img, table, .component-api) + h4,
+*:not(img, table, .component-api) + h5 {
+  margin-block-start: 1.75em;
+}
+
+mark {
+  padding-inline: 0.5em;
+  padding-block: 0.1em;
+  margin-inline: 0.2em;
+  border-radius: 2px;
+
+  background-color: hsla(from var(--mark-color) h s l / 0.8);
+  color: hsl(from var(--mark-color) h s 11%);
+}
+
+.note {
+  border-radius: var(--border-radius);
+  font-size: 0.9rem;
+  padding: 1.5em 1.75em;
+
+  background-color: hsla(from var(--note-color) h s l / 0.8);
+  color: hsl(from var(--note-color) h s 11%);
+
+  .note__title {
+    font-size: 1.125rem;
+    font-weight: var(--font-weight-bold);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  .note__title:not(:empty) {
+    margin-block-end: 0.5em;
+  }
+
+  p + p {
+    margin-block-start: 0.25em;
+  }
+}
+
+.note--warning {
+  --note-color: hsl(38, 75%, 48%);
+}
+
+.note--danger {
+  --note-color: hsl(2, 44%, 46%);
+}
+
+.note--success {
+  --note-color: hsl(109, 34%, 48%);
+}
+
+.note--info {
+  --note-color: hsl(196, 40%, 55%);
+}
+
+@media (width <= 30rem) {
+  .components-keyboard-shortcut {
+    position: absolute;
+    display: none;
+    opacity: 0.1;
+  }
+}

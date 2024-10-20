@@ -33,7 +33,7 @@
     id?: string;
 
     /**
-     * @see https://vuejs.org/api/built-in-special-attributes.html#is
+     * The `is` attribute for the [dynamic root component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components).
      */
     is?: string;
 
@@ -93,7 +93,7 @@
     placement: _placement,
   } = useFloating(trigger, target, {
     placement: toRef(props, "placement"),
-    middleware: [flip({ padding: 20 }), shift({ padding: 20 })],
+    middleware: [flip({ padding: 5 }), shift({ padding: 5 })],
     open: popover?.isOpen,
   });
 

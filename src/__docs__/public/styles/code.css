@@ -1,0 +1,152 @@
+:root {
+  --inline-code-bg: hsl(0, 0%, 84%);
+  --inline-code-text: hsl(240, 6%, 10%);
+
+  --code-bg: hsl(0, 0%, 96%);
+  --code-text: hsl(240, 6%, 10%);
+  --code-dimmed-text: hsl(16, 5%, 59%);
+}
+
+code,
+kbd {
+  padding-inline: 0.5em;
+  padding-block: 0.1em;
+  margin-inline: 0.2em;
+  border-radius: 2px;
+
+  font-size: 0.9em;
+}
+
+code:not([class]) {
+  background: var(--inline-code-bg);
+  color: var(--inline-code-text);
+  word-break: keep-all;
+}
+
+kbd {
+  background: linear-gradient(-225deg, #edeeee, #fff);
+
+  color: #373737;
+  word-break: keep-all;
+
+  box-shadow:
+    inset 0 -2px 0 0 #edeeee,
+    inset 0 0 1px 1px #fff,
+    0 1px 2px 1px rgba(30, 35, 90, 0.2);
+}
+
+kbd.space {
+  color: transparent;
+}
+
+pre {
+  display: block;
+  padding: 2em;
+  max-height: 40rem;
+  overflow: scroll;
+
+  border-radius: var(--border-radius);
+
+  background: var(--code-bg);
+  color: var(--code-text);
+
+  line-height: 1.5;
+  font-size: 1.125rem;
+}
+
+pre pre {
+  max-height: none;
+}
+
+.hljs-comment {
+  color: #b8b8b8;
+}
+
+.hljs-tag {
+  color: #585858;
+}
+
+.hljs-subst,
+.hljs-punctuation,
+.hljs-operator {
+  color: #383838;
+}
+
+.hljs-operator {
+  opacity: 0.7;
+}
+
+.hljs-bullet,
+.hljs-variable,
+.hljs-template-variable,
+.hljs-selector-tag,
+.hljs-name,
+.hljs-deletion {
+  color: #ab4642;
+}
+
+.hljs-symbol,
+.hljs-number,
+.hljs-link,
+.hljs-attr,
+.hljs-variable.constant_,
+.hljs-literal {
+  color: #d6931f;
+}
+
+.hljs-title,
+.hljs-class .hljs-title,
+.hljs-title.class_ {
+  color: #d6931f;
+}
+
+.hljs-strong {
+  font-weight: var(--font-weight-bold);
+  color: #d6931f;
+}
+
+.hljs-code,
+.hljs-addition,
+.hljs-title.class_.inherited__,
+.hljs-string {
+  color: #538947;
+}
+
+.hljs-built_in,
+.hljs-doctag,
+.hljs-quote,
+.hljs-keyword.hljs-atrule,
+.hljs-regexp {
+  color: #396b7d;
+}
+
+.hljs-function .hljs-title,
+.hljs-attribute,
+.ruby .hljs-property,
+.hljs-title.function_,
+.hljs-section {
+  color: #6b9bac;
+}
+
+.hljs-type,
+.hljs-template-tag,
+.diff .hljs-meta,
+.hljs-keyword {
+  color: #96609e;
+}
+
+.hljs-emphasis {
+  color: #96609e;
+  font-style: italic;
+}
+
+.hljs-meta,
+.hljs-meta .hljs-keyword,
+.hljs-meta .hljs-string {
+  color: #a16946;
+}
+
+.hljs-meta .hljs-keyword,
+.hljs-meta-keyword {
+  font-weight: var(--font-weight-bold);
+}

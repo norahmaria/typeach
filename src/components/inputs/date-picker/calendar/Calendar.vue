@@ -25,6 +25,12 @@
   } from "../context";
 
   export interface CalendarProps {
+    /**
+     * This is the focused date - **not the selected date**.
+     *
+     * You should use this date for navigation buttons and for
+     * updating the calendar title etc.
+     */
     date?: DayJs;
   }
 

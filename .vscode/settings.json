@@ -13,7 +13,9 @@
     "menuitemcheckbox",
     "toggletip",
     "treeitem",
-    "setsize"
+    "setsize",
+    "highlightjs",
+    "unicon"
   ],
 
   "cSpell.words": [

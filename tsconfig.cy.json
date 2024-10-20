@@ -8,8 +8,11 @@
     "cypress/support/commands.ts",
     "cypress/support/commands/**/*.ts"
   ],
-  "exclude": [],
+  "exclude": ["docs", "src/**/__docs__/*"],
   "compilerOptions": {
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "resolveJsonModule": true,
     "composite": true,
     "types": ["cypress-real-events"]
   }

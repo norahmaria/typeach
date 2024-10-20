@@ -5,6 +5,7 @@
     :aria-pressed="internalValue"
     :aria-disabled="readonly"
     :aria-required="true"
+    :disabled="disabled"
     type="button"
     @click="onClick">
     <slot :on="on" />
@@ -17,23 +18,36 @@
   import { createRandomId, usePeachyClasses, useInput } from "@/hooks";
 
   export interface SwitchProps {
+    id?: string;
     on?: boolean;
     readonly?: boolean;
+    disabled?: boolean;
+
+    /**
+     * The component only labels it as required with
+     * `aria-required` and does not deal with any error messages for you.
+     */
     required?: boolean;
-    id?: string;
   }
 
   const props = withDefaults(defineProps<SwitchProps>(), {
     id: () => createRandomId(),
     on: false,
-    required: false,
     readonly: false,
+    disabled: false,
+    required: false,
   });
 
   const emit = defineEmits<{
     "update:on": [on: boolean];
-    validate: [on: boolean];
-    "clear-validation": [];
+
+    /**
+     * Only triggers if part of an Input.
+     */ validate: [on: boolean];
+
+    /**
+     * Only triggers if part of an Input.
+     */ "clear-validation": [];
   }>();
 
   const { inputClass } = usePeachyClasses("switch", ["input"]);

@@ -11,6 +11,9 @@
   import { usePeachyClasses } from "@/hooks";
 
   export interface SelectSeparatorProps {
+    /**
+     * The `is` attribute for the [dynamic root component](https://vuejs.org/guide/essentials/component-basics.html#dynamic-components).
+     */
     is?: string;
   }
 

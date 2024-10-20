@@ -1,0 +1,185 @@
+/** ===== Input Layout ===== */
+
+.peachy-input.select {
+  display: grid;
+  gap: 0.5rem;
+
+  width: min(18rem, 95dvw);
+}
+
+.peachy-input__description {
+  opacity: 0.9;
+  font-size: 1rem;
+}
+
+.peachy-input__label {
+  font-size: 1.125rem;
+}
+
+/* ===== Button ===== */
+
+.peachy-select__trigger {
+  cursor: pointer;
+  padding: 0.5em 0.75em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+
+  background: var(--background-color);
+  color: var(--text-color);
+  font-size: 1rem;
+
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius);
+}
+
+.peachy-select__trigger[data-active="true"] :is(.union, svg) {
+  transform-origin: center;
+  transform: rotate(-180deg);
+}
+
+.peachy-select__trigger:hover {
+  background: var(--text-color);
+  color: var(--background-color);
+  border-color: var(--text-color);
+}
+
+.peachy-select__trigger:focus-visible {
+  outline: 2px solid var(--focus-color);
+}
+
+.peachy-select__trigger:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+
+  background-color: var(--border-color);
+}
+
+/* ===== Popup ===== */
+
+.peachy-select__target {
+  background: none;
+  border: none;
+  overflow: visible;
+}
+
+.peachy-select__list {
+  list-style: none;
+
+  display: grid;
+  gap: 0.25em;
+
+  margin: 1rem;
+  width: min(10rem, 95dvw);
+
+  font-size: 1rem;
+  padding: 0.75em 0.65em;
+
+  background: var(--background-color);
+  color: var(--text-color);
+
+  box-shadow:
+    rgba(0, 0, 0, 0.05) 0px 0px 0px 1px,
+    rgba(0, 0, 0, 0.1) 0px 10px 15px -3px,
+    rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
+}
+
+/* ===== Content ===== */
+
+.peachy-select__item {
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.peachy-select__item,
+.peachy-select__label {
+  padding: 0.25em 0.5em;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5em;
+
+  border: none;
+  background: var(--background-color);
+  color: var(--text-color);
+
+  border-radius: var(--border-radius);
+}
+
+.peachy-select__label {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+.peachy-select__item:hover,
+.peachy-select__item:focus-visible {
+  background: var(--text-color);
+  color: var(--background-color);
+}
+
+.peachy-select__item:focus {
+  outline: none;
+}
+
+.peachy-select__item[aria-disabled="true"] {
+  opacity: 0.4;
+  pointer-events: none;
+  cursor: default;
+}
+
+.peachy-select__item + .peachy-select__label {
+  margin-block-start: 0.75em;
+}
+
+.peachy-select__indicator[data-selected="false"] :is(.unicon, svg) {
+  display: none;
+}
+
+/* ===== Separators ===== */
+
+.peachy-select__separator {
+  border: none;
+
+  width: calc(100% + 0.75em + 0.75em);
+  margin: 0.5em auto;
+
+  height: 1px;
+  background-color: var(--border-color);
+  color: var(--text-color);
+
+  transform: translateX(-0.75em);
+}
+
+/* ===== Transitions ===== */
+
+@media (prefers-reduced-motion: no-preference) {
+  .peachy-select__trigger,
+  .peachy-select__item {
+    transition:
+      border-color var(--transition),
+      background var(--transition),
+      color var(--transition);
+  }
+
+  .peachy-select__trigger svg,
+  .peachy-select__item svg {
+    transition: inherit;
+  }
+
+  .peachy-select__trigger[data-active="true"] :is(.union, svg) {
+    transition: transform var(--transition);
+  }
+
+  .peachy-select__target:popover-open {
+    animation: FadeIn var(--transition);
+  }
+
+  @keyframes FadeIn {
+    from {
+      opacity: 0;
+    }
+  }
+}

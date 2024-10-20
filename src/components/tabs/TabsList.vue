@@ -22,7 +22,7 @@
 
   export interface TabsListProps {
     /**
-     * The orientation of the <Tabs.List />.
+     * The orientation of the list.
      *
      * @default "horizontal"
      */

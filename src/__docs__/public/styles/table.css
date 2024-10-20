@@ -1,0 +1,95 @@
+:root {
+  --table-border-color: transparent;
+
+  --table-border-inline: 0px solid var(--table-border-color);
+  --table-border-block: 0px solid var(--table-border-color);
+
+  --table-first-column-background-color: rgba(0, 0, 0, 0.05);
+
+  --table-even-rows-background-color: hsl(0, 0%, 96%);
+  --table-odd-rows-background-color: hsl(0, 0%, 93%);
+}
+
+table {
+  display: block;
+  max-width: 100%;
+  overflow-y: scroll;
+
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+thead tr,
+tr:nth-child(even) {
+  background-color: var(--table-even-rows-background-color);
+}
+
+tr:nth-child(odd):not(thead tr) {
+  background-color: var(--table-odd-rows-background-color);
+}
+
+th,
+td {
+  padding-inline: 1em;
+  padding-block: 0.75em;
+
+  font-size: 1rem;
+
+  border-inline-end: var(--table-border-inline);
+  border-block-end: var(--table-border-block);
+}
+
+th p,
+td p {
+  font-size: 1rem;
+}
+
+td.long p,
+td.long p {
+  min-width: 35ch;
+}
+
+th {
+  text-align: left;
+  font-weight: 600;
+
+  border-block-start: var(--table-border-block);
+}
+
+th:first-of-type,
+td:first-of-type {
+  background-color: var(--table-first-column-background-color);
+}
+
+th:first-child,
+td:first-child {
+  border-inline-start: var(--table-border-inline);
+}
+
+th:first-of-type {
+  border-start-start-radius: var(--border-radius);
+}
+
+th:last-of-type {
+  border-start-end-radius: var(--border-radius);
+}
+
+tr:last-of-type td:first-of-type {
+  border-end-start-radius: var(--border-radius);
+}
+
+tr:last-of-type td:last-of-type {
+  border-end-end-radius: var(--border-radius);
+}
+
+table {
+  line-height: 1.6;
+}
+
+table p + p {
+  margin-block-start: 0.5em;
+}
+
+/* table code {
+  white-space: nowrap;
+} */

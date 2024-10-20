@@ -19,6 +19,18 @@
 
   import { CheckboxContextKey, type CheckboxContext } from "./context";
 
+  defineSlots<{
+    /**
+     * Renders if the checkbox is checked.
+     */
+    default(): any;
+
+    /**
+     * Renders if the checkbox is indeterminate.
+     */
+    indeterminate(): any;
+  }>();
+
   const { indicatorClass } = usePeachyClasses("checkbox", ["indicator"]);
 
   const checkbox = inject<CheckboxContext>(CheckboxContextKey);

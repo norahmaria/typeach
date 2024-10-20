@@ -8,6 +8,8 @@
     :value="unref(inputValue)"
     :class="inputClass()"
     :aria-required="required"
+    :disabled="disabled"
+    :readonly="readOnly"
     type="text"
     @change="onChange"
     @input="input.clearErrors" />
@@ -29,19 +31,24 @@
   export interface DatePickerProps {
     id?: string;
     date?: DayJs;
+    readOnly?: boolean;
+    disabled?: boolean;
+
+    /**
+     * The component only labels it as required with `aria-required`
+     * and does not deal with any error messages for you.
+     */
     required?: boolean;
 
     /**
-     * Formats allows for the input, must be a valid Day.js formatting pattern.
-     *
-     * @see https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens
+     * Formats allows for the input,
+     * must be a valid [Day.js formatting pattern](https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens).
      */
     inputFormats?: string[];
 
     /**
-     * How the text in the input is formatted after date is updated, must be a valid Day.js formatting pattern.
-     *
-     * @see https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens
+     * How the text in the input is formatted after date is updated,
+     * must be a valid [Day.js formatting pattern](https://day.js.org/docs/en/parse/string-format#list-of-all-available-parsing-tokens).
      */
     displayFormat?: string;
   }
@@ -51,11 +58,21 @@
     inputFormats: () => ["M/D/YYYY", "MM/DD/YYYY"],
     displayFormat: "M/D/YYYY",
     date: undefined,
+    readOnly: false,
+    disabled: false,
   });
 
   const emit = defineEmits<{
     "update:date": [value: DayJs | undefined];
+
+    /**
+     * Only triggers if part of an Input.
+     */
     validate: [value: DayJs | undefined];
+
+    /**
+     * Only triggers if part of an Input.
+     */
     "clear-validation": [];
   }>();
 
