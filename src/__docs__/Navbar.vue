@@ -15,13 +15,13 @@
           Styling
         </PeachyMenu.Item>
 
-        <PeachyMenu.Item @click="router.push('user-preferences')">
+        <!-- <PeachyMenu.Item @click="router.push('user-preferences')">
           User preferences
-        </PeachyMenu.Item>
+        </PeachyMenu.Item> -->
 
-        <PeachyMenu.Item @click="router.push('user-guides')">
+        <!-- <PeachyMenu.Item @click="router.push('user-guides')">
           User guides
-        </PeachyMenu.Item>
+        </PeachyMenu.Item> -->
       </PeachyMenu.List>
     </PeachyMenu.Target>
   </PeachyMenu.Menu>
