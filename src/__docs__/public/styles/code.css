@@ -43,7 +43,7 @@ pre {
   display: block;
   padding: 2em;
   max-height: 40rem;
-  overflow: scroll;
+  overflow: auto;
 
   border-radius: var(--border-radius);
 
