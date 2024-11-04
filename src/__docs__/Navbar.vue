@@ -36,7 +36,7 @@
 
         <span class="components-keyboard-shortcut">
           <kbd v-if="isMac">⌘</kbd>
-          <kbd v-else>CTRL</kbd>
+          <kbd v-else>ALT</kbd>
           +
           <kbd>K</kbd>
         </span>
@@ -92,7 +92,7 @@
   const isMac = /Mac|iPhone|iPod|iPad/i.test(navigator.platform);
 
   window.addEventListener("keydown", e => {
-    if (e.key === "k" && (e.ctrlKey || e.metaKey)) {
+    if (e.key === "k" && (e.altKey || e.metaKey)) {
       componentMenuTrigger.value?.click();
     }
   });
